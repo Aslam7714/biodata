@@ -531,7 +531,7 @@ async function patchGitHubConfig(newCfg,ghUser,ghRepo,ghToken){
   // 3. Push updated file back to GitHub
   const pushRes=await fetch(`https://api.github.com/repos/${ghUser}/${ghRepo}/contents/index.html`,{
     method:'PUT',
-    headers:{'Authorization':`token ${ghToken}`,'Accept':'application/vnd.github.v3+json`,'Content-Type':'application/json'},
+    headers:{'Authorization':`token ${ghToken}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
     body:JSON.stringify({message:'biodata: save config',content:btoa(unescape(encodeURIComponent(content))),sha})
   });
   if(!pushRes.ok){const e=await pushRes.json();throw new Error(e.message||'GitHub push failed');}
