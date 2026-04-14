@@ -4,33 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#0D2318">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <title>Islamic Marriage Biodata</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-     CONFIGURATION â filled automatically on first setup
-     DO NOT edit manually unless you know what you're doing
-     ââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
-<script id="app-config" type="application/json">
-{
-  "masterBinId": "69de6b95856a682189330d70"
-}
-</script>
+<!--MASTER_BIN_ID:-->
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
   --gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E6B8;
   --g1:#0D2318;--g2:#1A3A2A;--g3:#2D5A3D;
-  --r:14px;--rs:10px;
-  --sb:env(safe-area-inset-bottom,0px);
+  --r:14px;--rs:10px;--sb:env(safe-area-inset-bottom,0px);
 }
 html{-webkit-text-size-adjust:100%}
 body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:100vh;overflow-x:hidden;overscroll-behavior:none}
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
-
-/* LOADER */
 #loader{position:fixed;inset:0;background:var(--g1);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .7s,visibility .7s}
 #loader.out{opacity:0;visibility:hidden}
 .ld-ring{width:60px;height:60px;border-radius:50%;border:2px solid rgba(201,168,76,.15);border-top-color:var(--gold);animation:spin 1s linear infinite;margin-bottom:1.25rem}
@@ -41,16 +30,10 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
 .ld-d:nth-child(2){animation-delay:.2s}.ld-d:nth-child(3){animation-delay:.4s}
 @keyframes dp{0%,80%,100%{transform:scale(.5);opacity:.3}40%{transform:scale(1);opacity:1}}
 @keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
-
-/* APP */
 #app{position:relative;z-index:1;opacity:0;transition:opacity .7s}
 #app.show{opacity:1}
-
-/* EDIT BAR */
 .ebar{background:rgba(13,35,24,.97);border-bottom:1px solid rgba(201,168,76,.2);padding:.5rem 1rem;font-size:.75rem;color:var(--gold3);display:flex;align-items:center;justify-content:space-between;gap:8px;position:sticky;top:0;z-index:300}
 .epill{background:var(--gold);color:var(--g1);padding:2px 8px;border-radius:20px;font-size:.65rem;font-weight:800;letter-spacing:.5px}
-
-/* HERO */
 .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 1.25rem 3rem;position:relative;overflow:hidden;text-align:center}
 .corner{position:absolute;opacity:.15;pointer-events:none}
 .corner.tl{top:0;left:0}.corner.tr{top:0;right:0;transform:scaleX(-1)}
@@ -73,34 +56,24 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
 @keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes chin{to{opacity:1;transform:translateY(0)}}
-
-/* NAV */
 .nav{background:rgba(10,28,18,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(201,168,76,.12);display:flex;position:sticky;bottom:0;z-index:200;padding-bottom:var(--sb)}
 @media(min-width:640px){.nav{top:0;bottom:auto;border-top:none;border-bottom:1px solid rgba(201,168,76,.12)}}
 .ntab{flex:1;padding:.85rem .25rem;text-align:center;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.35);cursor:pointer;border-top:2px solid transparent;transition:all .2s;letter-spacing:.5px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:3px;user-select:none}
 .ntab .ni{font-size:1.1rem;line-height:1}
 .ntab.active{color:var(--gold);border-top-color:var(--gold)}
 .ntab:active{opacity:.7}
-
-/* PAGES */
 .page{display:none;padding:1.5rem 1rem 5rem;max-width:640px;margin:0 auto}
 .page.active{display:block}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-
-/* VERSE */
 .verse{background:linear-gradient(145deg,var(--g2),var(--g3));border:1px solid rgba(201,168,76,.18);border-radius:var(--r);padding:1.75rem 1.25rem;text-align:center;margin-bottom:1.25rem}
 .var{font-family:'Amiri',serif;font-size:clamp(1.1rem,4.5vw,1.6rem);color:var(--gold2);line-height:2;margin-bottom:.85rem;direction:rtl}
 .ven{font-size:.8rem;color:rgba(255,255,255,.55);font-style:italic;line-height:1.8}
 .vrf{font-size:.68rem;color:var(--gold);margin-top:.5rem;letter-spacing:1.5px;text-transform:uppercase}
-
-/* CARD */
 .card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.11);border-radius:var(--r);padding:1.25rem;margin-bottom:1.1rem}
 .chd{display:flex;align-items:center;gap:10px;margin-bottom:1.1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(201,168,76,.1)}
 .cic{width:32px;height:32px;border-radius:9px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
 .ct{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold3);letter-spacing:.3px}
-
-/* BIO ROWS */
 .brow{display:flex;flex-direction:column;gap:2px;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
 .brow:last-child{border-bottom:none}
 @media(min-width:400px){.brow{flex-direction:row;align-items:flex-start;gap:8px}.blbl{min-width:110px}}
@@ -108,22 +81,16 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
 .bval{font-size:.88rem;color:rgba(255,255,255,.82);line-height:1.55;flex:1}
 .bdsc{margin-top:.65rem;padding:.85rem 1rem;background:rgba(201,168,76,.04);border-left:2px solid rgba(201,168,76,.25);border-radius:0 8px 8px 0;font-size:.82rem;color:rgba(255,255,255,.58);line-height:1.8;font-style:italic}
 .bemp{color:rgba(255,255,255,.2);font-size:.85rem;text-align:center;padding:.65rem}
-
-/* PHOTOS */
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:.5rem}
 @media(min-width:400px){.pgrid{grid-template-columns:repeat(3,1fr)}}
 .pitem{aspect-ratio:1;border-radius:9px;overflow:hidden;border:1px solid rgba(201,168,76,.12);cursor:pointer;transition:transform .25s}
 .pitem:active{transform:scale(.97)}
 .pitem img{width:100%;height:100%;object-fit:cover;display:block}
 .pemp{text-align:center;padding:2.5rem 1rem;color:rgba(255,255,255,.25);font-size:.85rem}
-
-/* LIGHTBOX */
 #lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9000;align-items:center;justify-content:center}
 #lb.open{display:flex}
 #lb img{max-width:96vw;max-height:92svh;border-radius:8px}
 #lb-x{position:absolute;top:1rem;right:1.25rem;color:rgba(255,255,255,.55);font-size:2rem;cursor:pointer;line-height:1;padding:.25rem}
-
-/* FORMS */
 .fg{margin-bottom:.9rem}
 .fl{display:block;font-size:.68rem;font-weight:700;color:rgba(201,168,76,.65);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.6px}
 .fi,.fs,.ft{width:100%;padding:.75rem .9rem;min-height:48px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.18);border-radius:var(--rs);font-family:'Nunito',sans-serif;font-size:1rem;color:rgba(255,255,255,.9);transition:border-color .2s;outline:none;-webkit-appearance:none}
@@ -133,41 +100,29 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
 .ft{min-height:90px;resize:vertical}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
 @media(max-width:360px){.frow{grid-template-columns:1fr}}
-
-/* BUTTONS */
 .btn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:52px;padding:.85rem 1.4rem;border-radius:var(--rs);font-family:'Nunito',sans-serif;font-size:.92rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;width:100%;margin-bottom:.75rem;user-select:none}
 .btn-gold{background:linear-gradient(135deg,var(--gold),#B8963E);color:var(--g1);box-shadow:0 4px 18px rgba(201,168,76,.22)}
 .btn-gold:active{transform:scale(.98)}
 .btn-ghost{background:transparent;border:1px solid rgba(201,168,76,.3);color:var(--gold3)}
 .btn-danger{background:rgba(239,68,68,.1);color:#fca5a5;border:1px solid rgba(239,68,68,.22)}
 .btn-sm{min-height:38px;padding:.4rem .85rem;font-size:.78rem;width:auto;margin-bottom:0}
-
-/* ALERTS */
 .al{padding:.8rem 1rem;border-radius:var(--rs);font-size:.84rem;font-weight:600;margin-bottom:1rem;display:none}
 .al.ok{background:rgba(16,185,129,.1);color:#6ee7b7;border:1px solid rgba(16,185,129,.18);display:block}
 .al.err{background:rgba(239,68,68,.1);color:#fca5a5;border:1px solid rgba(239,68,68,.18);display:block}
 .al.inf{background:rgba(201,168,76,.07);color:var(--gold3);border:1px solid rgba(201,168,76,.18);display:block}
-
-/* STATS */
 .sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:1.1rem}
 @media(min-width:420px){.sgrid{grid-template-columns:repeat(4,1fr)}}
 .sc{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.1);border-radius:var(--rs);padding:1rem .75rem;text-align:center}
 .sn{font-size:1.9rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:3px;font-family:'Cormorant Garamond',serif}
 .sl{font-size:.65rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.8px}
-
-/* VISIT LOG */
 .vrow{display:flex;align-items:flex-start;justify-content:space-between;padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.04);gap:6px}
 .vrow:last-child{border-bottom:none}
 .vm{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.78)}
 .vd{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:2px;line-height:1.5}
 .badge{padding:2px 8px;border-radius:20px;font-size:.65rem;font-weight:700;white-space:nowrap;flex-shrink:0;background:rgba(201,168,76,.1);color:var(--gold);border:1px solid rgba(201,168,76,.18)}
-
-/* LINK BOX */
 .lbox{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.13);border-radius:var(--rs);padding:.6rem .8rem;margin:.4rem 0 .85rem}
 .lbox code{flex:1;font-size:.72rem;color:var(--gold3);word-break:break-all;line-height:1.5}
 .lcopy{background:var(--gold);color:var(--g1);border:none;border-radius:6px;padding:6px 10px;font-size:.72rem;cursor:pointer;font-weight:700;white-space:nowrap;min-height:34px}
-
-/* UPLOAD */
 .upzone{border:2px dashed rgba(201,168,76,.22);border-radius:var(--rs);padding:1.75rem 1rem;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:.85rem}
 .upzone:active{border-color:var(--gold);background:rgba(201,168,76,.04)}
 .upzone p{color:rgba(255,255,255,.38);font-size:.84rem}
@@ -175,104 +130,81 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
 .pm-item{display:flex;align-items:center;gap:9px;padding:.55rem;background:rgba(255,255,255,.03);border-radius:8px;margin-bottom:7px;border:1px solid rgba(255,255,255,.05)}
 .pm-item img{width:44px;height:44px;object-fit:cover;border-radius:6px}
 .pm-item .info{flex:1;font-size:.78rem;color:rgba(255,255,255,.45);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-
-/* ORNAMENT */
 .orn{text-align:center;color:var(--gold);font-size:.85rem;letter-spacing:8px;opacity:.38;padding:.85rem 0}
-
-/* SETUP MODAL */
 #setup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:8000;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .setup-box{background:var(--g2);border:1px solid rgba(201,168,76,.18);border-radius:var(--r);padding:2rem 1.25rem;max-width:460px;width:calc(100% - 2rem);margin:2rem auto 5rem}
-.setup-step{display:flex;align-items:flex-start;gap:10px;padding:.75rem 0;border-bottom:1px solid rgba(201,168,76,.08)}
-.setup-step:last-child{border-bottom:none}
-.setup-num{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,.12);color:var(--gold);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-
-/* scrollbar */
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--g1)}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.25);border-radius:2px}
 </style>
 </head>
 <body>
-
 <canvas id="bg-canvas"></canvas>
 
 <div id="loader">
   <div class="ld-ring"></div>
-  <div class="ld-ar">Ø¨ÙØ³ÙÙÙ Ø§ÙÙÙÙÙÙ</div>
+  <div class="ld-ar">&#x628;&#x650;&#x633;&#x652;&#x645;&#x650; &#x627;&#x644;&#x644;&#x651;&#x647;&#x650;</div>
   <div class="ld-dots"><div class="ld-d"></div><div class="ld-d"></div><div class="ld-d"></div></div>
 </div>
 
 <div id="lb" onclick="closeLB()">
-  <span id="lb-x">â</span>
+  <span id="lb-x">&#10005;</span>
   <img id="lb-img" src="" alt="">
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââââââ
-     SETUP MODAL â only shown to admin on
-     first time ever (bins not created yet)
-ââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- SETUP MODAL -->
 <div id="setup">
   <div class="setup-box">
     <div style="text-align:center;margin-bottom:1.75rem">
-      <div style="font-family:'Amiri',serif;font-size:2.2rem;color:var(--gold)">â¦</div>
+      <div style="font-family:'Amiri',serif;font-size:2.2rem;color:var(--gold)">&#10022;</div>
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold3);margin-top:.4rem">Admin Setup</h2>
-      <p style="font-size:.78rem;color:rgba(255,255,255,.38);margin-top:.3rem">One-time â viewers will never see this screen</p>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.38);margin-top:.3rem">One-time only &mdash; viewers never see this</p>
     </div>
-
-    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:var(--rs);padding:.85rem 1rem;margin-bottom:1.25rem">
-      <p style="font-size:.78rem;color:var(--gold3);font-weight:600;margin-bottom:.4rem">How this works</p>
-      <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6">After you complete setup, the bin IDs are saved <strong style="color:rgba(255,255,255,.7)">directly into your index.html file on GitHub</strong> using the GitHub API. This means anyone opening your share link on any device will always see your biodata â never this setup form.</p>
-    </div>
-
     <div id="sal" class="al"></div>
-
     <div class="fg">
       <label class="fl">GitHub Username</label>
-      <input class="fi" id="sgu" placeholder="e.g. ahmed_dubai" autocomplete="off" autocorrect="off" autocapitalize="off">
+      <input class="fi" id="sgu" placeholder="e.g. Aslam7714" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     </div>
     <div class="fg">
       <label class="fl">GitHub Repo Name</label>
-      <input class="fi" id="sgr" placeholder="biodata" value="biodata" autocomplete="off" autocorrect="off" autocapitalize="off">
+      <input class="fi" id="sgr" placeholder="biodata" value="biodata" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     </div>
     <div class="fg">
       <label class="fl">GitHub Personal Access Token</label>
-      <input class="fi" id="sgt" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" autocorrect="off" autocapitalize="off">
-      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">github.com â Settings â Developer settings â Personal access tokens â Tokens (classic) â Generate new token â select <strong style="color:rgba(255,255,255,.5)">repo</strong> scope â copy</p>
+      <input class="fi" id="sgt" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">github.com &#8594; Profile &#8594; Settings &#8594; Developer settings &#8594; Personal access tokens &#8594; Tokens (classic) &#8594; Generate &#8594; tick <strong style="color:rgba(255,255,255,.5)">repo</strong> &#8594; copy</p>
     </div>
     <div class="fg">
-      <label class="fl">JSONBin.io API Key (X-Master-Key)</label>
-      <input class="fi" id="sjb" placeholder="$2b$10$..." autocomplete="off" autocorrect="off" autocapitalize="off">
-      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">jsonbin.io â Sign Up â API Keys</p>
+      <label class="fl">JSONBin.io API Key</label>
+      <input class="fi" id="sjb" placeholder="$2b$10$..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">jsonbin.io &#8594; Sign Up &#8594; API Keys &#8594; X-Master-Key</p>
     </div>
     <div class="fg">
       <label class="fl">ImgBB API Key</label>
-      <input class="fi" id="sib" placeholder="abc123..." autocomplete="off" autocorrect="off" autocapitalize="off">
-      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">imgbb.com â Account â API</p>
+      <input class="fi" id="sib" placeholder="abc123..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">imgbb.com &#8594; Account &#8594; API</p>
     </div>
     <div class="fg">
-      <label class="fl">Admin Password (you choose)</label>
+      <label class="fl">Choose Admin Password</label>
       <input class="fi" id="sap" type="password" placeholder="Something memorable">
-      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">Add <code style="color:var(--gold)">?edit=PASSWORD</code> to your URL to access admin mode</p>
+      <p style="font-size:.7rem;color:rgba(255,255,255,.28);margin-top:4px">You will use <code style="color:var(--gold)">?edit=PASSWORD</code> in the URL to access admin</p>
     </div>
-    <button class="btn btn-gold" onclick="doSetup()" style="margin-top:.5rem">â¦ Complete Setup</button>
-    <p style="font-size:.68rem;color:rgba(255,255,255,.2);text-align:center;line-height:1.6;margin-top:.75rem">Your keys are written into your own GitHub file. They are never sent to any third party other than jsonbin.io and imgbb.com directly.</p>
+    <button class="btn btn-gold" onclick="doSetup()" style="margin-top:.5rem">&#10022; Complete Setup</button>
+    <p style="font-size:.68rem;color:rgba(255,255,255,.2);text-align:center;line-height:1.6;margin-top:.75rem">Only a harmless bin ID is written to your GitHub file &mdash; no API keys, no secrets.</p>
   </div>
 </div>
 
 <div id="app">
-
   <div id="ebar" style="display:none" class="ebar">
-    <span>ð Admin Mode <span class="epill">PRIVATE</span></span>
+    <span>&#128274; Admin Mode <span class="epill">PRIVATE</span></span>
     <span id="eb-u" style="opacity:.5;font-size:.68rem;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
     <svg class="corner tl" width="110" height="110" viewBox="0 0 120 120"><g stroke="#C9A84C" fill="none" stroke-width=".7"><polygon points="0,0 60,0 60,8 8,8 8,60 0,60"/><polygon points="0,0 45,0 45,16 16,16 16,45 0,45"/><line x1="0" y1="0" x2="40" y2="40"/><circle cx="30" cy="30" r="8"/><circle cx="30" cy="30" r="4"/></g></svg>
     <svg class="corner tr" width="110" height="110" viewBox="0 0 120 120"><g stroke="#C9A84C" fill="none" stroke-width=".7"><polygon points="0,0 60,0 60,8 8,8 8,60 0,60"/><polygon points="0,0 45,0 45,16 16,16 16,45 0,45"/><line x1="0" y1="0" x2="40" y2="40"/><circle cx="30" cy="30" r="8"/><circle cx="30" cy="30" r="4"/></g></svg>
     <svg class="corner bl" width="110" height="110" viewBox="0 0 120 120"><g stroke="#C9A84C" fill="none" stroke-width=".7"><polygon points="0,0 60,0 60,8 8,8 8,60 0,60"/><polygon points="0,0 45,0 45,16 16,16 16,45 0,45"/><line x1="0" y1="0" x2="40" y2="40"/><circle cx="30" cy="30" r="8"/><circle cx="30" cy="30" r="4"/></g></svg>
     <svg class="corner br" width="110" height="110" viewBox="0 0 120 120"><g stroke="#C9A84C" fill="none" stroke-width=".7"><polygon points="0,0 60,0 60,8 8,8 8,60 0,60"/><polygon points="0,0 45,0 45,16 16,16 16,45 0,45"/><line x1="0" y1="0" x2="40" y2="40"/><circle cx="30" cy="30" r="8"/><circle cx="30" cy="30" r="4"/></g></svg>
-
     <div class="hvline"></div>
-    <div class="bism">Ø¨ÙØ³ÙÙÙ Ø§ÙÙÙÙÙÙ Ø§ÙØ±ÙÙØ­ÙÙÙÙÙ Ø§ÙØ±ÙÙØ­ÙÙÙ</div>
+    <div class="bism">&#x628;&#x650;&#x633;&#x652;&#x645;&#x650; &#x627;&#x644;&#x644;&#x651;&#x647;&#x650; &#x627;&#x644;&#x631;&#x651;&#x62D;&#x652;&#x645;&#x670;&#x646;&#x650; &#x627;&#x644;&#x631;&#x651;&#x62D;&#x650;&#x64A;&#x645;&#x650;</div>
     <div class="bism-en">In the name of Allah, the Most Gracious, the Most Merciful</div>
     <div class="dvdr">
       <span></span>
@@ -287,51 +219,51 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
   </section>
 
   <nav class="nav" id="mainnav">
-    <div class="ntab active" onclick="go('pbio')"><span class="ni">â½</span>Biodata</div>
-    <div class="ntab" onclick="go('pphoto')"><span class="ni">â</span>Photos</div>
-    <div class="ntab" id="tedit" style="display:none" onclick="go('pedit')"><span class="ni">â</span>Edit</div>
-    <div class="ntab" id="tdash" style="display:none" onclick="go('pdash')"><span class="ni">â</span>Dash</div>
+    <div class="ntab active" onclick="go('pbio')"><span class="ni">&#9789;</span>Biodata</div>
+    <div class="ntab" onclick="go('pphoto')"><span class="ni">&#9670;</span>Photos</div>
+    <div class="ntab" id="tedit" style="display:none" onclick="go('pedit')"><span class="ni">&#9998;</span>Edit</div>
+    <div class="ntab" id="tdash" style="display:none" onclick="go('pdash')"><span class="ni">&#9685;</span>Dash</div>
   </nav>
 
-  <!-- PAGE: BIODATA -->
+  <!-- BIODATA PAGE -->
   <div class="page active" id="pbio">
     <div class="reveal">
       <div class="verse">
-        <div class="var">ÙÙÙÙÙÙ Ø¢ÙÙØ§ØªÙÙÙ Ø£ÙÙÙ Ø®ÙÙÙÙÙ ÙÙÙÙÙ ÙÙÙÙÙ Ø£ÙÙÙÙØ³ÙÙÙÙÙ Ø£ÙØ²ÙÙÙØ§Ø¬ÙØ§ ÙÙÙØªÙØ³ÙÙÙÙÙÙØ§ Ø¥ÙÙÙÙÙÙÙØ§ ÙÙØ¬ÙØ¹ÙÙÙ Ø¨ÙÙÙÙÙÙÙÙ ÙÙÙÙÙØ¯ÙÙØ©Ù ÙÙØ±ÙØ­ÙÙÙØ©Ù</div>
+        <div class="var">&#x648;&#x64E;&#x645;&#x650;&#x646;&#x652; &#x622;&#x64A;&#x64E;&#x627;&#x062A;&#x650;&#x647;&#x650; &#x623;&#x064E;&#x646;&#x652; &#x062E;&#x064E;&#x644;&#x064E;&#x602;&#x642;&#x064E; &#x644;&#x064E;&#x0643;&#x064F;&#x0645;&#x0020;&#x0645;&#x0650;&#x0646;&#x0652;&#x0020;&#x0623;&#x064E;&#x0646;&#x0641;&#x064F;&#x0633;&#x0650;&#x0643;&#x064F;&#x0645;&#x0020;&#x0623;&#x064E;&#x0632;&#x0652;&#x0648;&#x064E;&#x0627;&#x062C;&#x064B;&#x0627;</div>
         <div class="ven">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy."</div>
-        <div class="vrf">â Surah Ar-Rum 30:21</div>
+        <div class="vrf">&#8212; Surah Ar-Rum 30:21</div>
       </div>
     </div>
-    <div class="reveal" style="transition-delay:.08s"><div class="card"><div class="chd"><div class="cic">ð¤</div><div class="ct">Personal</div></div><div id="bp"></div></div></div>
-    <div class="reveal" style="transition-delay:.12s"><div class="card"><div class="chd"><div class="cic">ð¡</div><div class="ct">Family</div></div><div id="bf"></div></div></div>
-    <div class="reveal" style="transition-delay:.16s"><div class="card"><div class="chd"><div class="cic">â½</div><div class="ct">Religious Practice</div></div><div id="br"></div></div></div>
-    <div class="reveal" style="transition-delay:.2s"><div class="card"><div class="chd"><div class="cic">ð</div><div class="ct">Education &amp; Career</div></div><div id="be"></div></div></div>
-    <div class="reveal" style="transition-delay:.24s"><div class="card"><div class="chd"><div class="cic">â¤</div><div class="ct">Partner Expectations</div></div><div id="bpt"></div></div></div>
-    <div class="reveal" style="transition-delay:.28s"><div class="card"><div class="chd"><div class="cic">ð</div><div class="ct">Contact</div></div><div id="bc"></div></div></div>
-    <div class="orn">â¦ &nbsp; â¦ &nbsp; â¦</div>
-    <p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.2);padding-bottom:1.5rem;letter-spacing:1px">May Allah bless this union with love, peace and barakah â Ø¢ÙÙÙ</p>
+    <div class="reveal" style="transition-delay:.08s"><div class="card"><div class="chd"><div class="cic">&#128100;</div><div class="ct">Personal</div></div><div id="bp"><div class="bemp">Loading...</div></div></div></div>
+    <div class="reveal" style="transition-delay:.12s"><div class="card"><div class="chd"><div class="cic">&#127968;</div><div class="ct">Family</div></div><div id="bf"><div class="bemp">Loading...</div></div></div></div>
+    <div class="reveal" style="transition-delay:.16s"><div class="card"><div class="chd"><div class="cic">&#9789;</div><div class="ct">Religious Practice</div></div><div id="br"><div class="bemp">Loading...</div></div></div></div>
+    <div class="reveal" style="transition-delay:.2s"><div class="card"><div class="chd"><div class="cic">&#127891;</div><div class="ct">Education &amp; Career</div></div><div id="be"><div class="bemp">Loading...</div></div></div></div>
+    <div class="reveal" style="transition-delay:.24s"><div class="card"><div class="chd"><div class="cic">&#10084;</div><div class="ct">Partner Expectations</div></div><div id="bpt"><div class="bemp">Loading...</div></div></div></div>
+    <div class="reveal" style="transition-delay:.28s"><div class="card"><div class="chd"><div class="cic">&#128222;</div><div class="ct">Contact</div></div><div id="bc"><div class="bemp">Loading...</div></div></div></div>
+    <div class="orn">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.2);padding-bottom:1.5rem;letter-spacing:1px">May Allah bless this union with love, peace and barakah</p>
   </div>
 
-  <!-- PAGE: PHOTOS -->
+  <!-- PHOTOS PAGE -->
   <div class="page" id="pphoto">
     <div class="reveal">
       <div class="card">
-        <div class="chd"><div class="cic">ð·</div><div class="ct">Photos</div></div>
+        <div class="chd"><div class="cic">&#128247;</div><div class="ct">Photos</div></div>
         <div class="pgrid" id="pgallery"><div class="pemp">No photos added yet.</div></div>
       </div>
     </div>
   </div>
 
-  <!-- PAGE: EDIT (admin) -->
+  <!-- EDIT PAGE -->
   <div class="page" id="pedit">
     <div id="eal" class="al"></div>
     <div class="card reveal">
-      <div class="chd"><div class="cic">ð</div><div class="ct">Share Link</div></div>
-      <p style="font-size:.78rem;color:rgba(255,255,255,.38);margin-bottom:.4rem">Anyone with this link can view â they cannot edit.</p>
-      <div class="lbox"><code id="slink">â</code><button class="lcopy" onclick="cpLink('slink')">Copy</button></div>
+      <div class="chd"><div class="cic">&#128279;</div><div class="ct">Share Link</div></div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.38);margin-bottom:.4rem">Anyone with this link can view &mdash; they cannot edit.</p>
+      <div class="lbox"><code id="slink">&#8212;</code><button class="lcopy" onclick="cpLink('slink')">Copy</button></div>
     </div>
     <div class="card reveal" style="transition-delay:.05s">
-      <div class="chd"><div class="cic">ð¤</div><div class="ct">Personal</div></div>
+      <div class="chd"><div class="cic">&#128100;</div><div class="ct">Personal</div></div>
       <div class="frow"><div class="fg"><label class="fl">Full Name</label><input class="fi" id="fn" placeholder="Your full name"></div><div class="fg"><label class="fl">Age</label><input class="fi" id="fa" type="number" placeholder="24" inputmode="numeric"></div></div>
       <div class="frow"><div class="fg"><label class="fl">Date of Birth</label><input class="fi" id="fdob" type="date"></div><div class="fg"><label class="fl">Nationality</label><input class="fi" id="fnat" placeholder="e.g. Malaysian"></div></div>
       <div class="frow"><div class="fg"><label class="fl">Ethnicity</label><input class="fi" id="feth" placeholder="e.g. Arab, Malay"></div><div class="fg"><label class="fl">City / Country</label><input class="fi" id="floc" placeholder="e.g. Dubai, UAE"></div></div>
@@ -343,13 +275,13 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
       <div class="fg"><label class="fl">About Me</label><textarea class="ft" id="fab" placeholder="A heartfelt description of your personality and values..."></textarea></div>
     </div>
     <div class="card reveal" style="transition-delay:.08s">
-      <div class="chd"><div class="cic">ð¡</div><div class="ct">Family</div></div>
-      <div class="frow"><div class="fg"><label class="fl">Father</label><input class="fi" id="ffa" placeholder="Name â Occupation"></div><div class="fg"><label class="fl">Mother</label><input class="fi" id="fmo" placeholder="Name â Occupation"></div></div>
+      <div class="chd"><div class="cic">&#127968;</div><div class="ct">Family</div></div>
+      <div class="frow"><div class="fg"><label class="fl">Father</label><input class="fi" id="ffa" placeholder="Name &mdash; Occupation"></div><div class="fg"><label class="fl">Mother</label><input class="fi" id="fmo" placeholder="Name &mdash; Occupation"></div></div>
       <div class="frow"><div class="fg"><label class="fl">Siblings</label><input class="fi" id="fsib" placeholder="e.g. 2 brothers, 1 sister"></div><div class="fg"><label class="fl">Family Type</label><select class="fs" id="fft"><option value="">Select...</option><option>Nuclear</option><option>Joint / Extended</option></select></div></div>
       <div class="fg"><label class="fl">Family Background</label><textarea class="ft" id="ffd" placeholder="Values, background, environment..."></textarea></div>
     </div>
     <div class="card reveal" style="transition-delay:.11s">
-      <div class="chd"><div class="cic">â½</div><div class="ct">Religious Practice</div></div>
+      <div class="chd"><div class="cic">&#9789;</div><div class="ct">Religious Practice</div></div>
       <div class="frow">
         <div class="fg"><label class="fl">Madhab</label><select class="fs" id="fmh"><option value="">Select...</option><option>Hanafi</option><option>Maliki</option><option>Shafi'i</option><option>Hanbali</option><option>Not specified</option></select></div>
         <div class="fg"><label class="fl">Daily Prayer</label><select class="fs" id="fsl"><option value="">Select...</option><option>All 5 prayers</option><option>Mostly regular</option><option>Working on it</option></select></div>
@@ -358,317 +290,348 @@ body{font-family:'Nunito',sans-serif;background:var(--g1);color:#fff;min-height:
         <div class="fg"><label class="fl">Hijab / Appearance</label><select class="fs" id="fhj"><option value="">Select...</option><option>Wears hijab</option><option>Wears niqab</option><option>No hijab</option><option>Has beard</option><option>No beard</option></select></div>
         <div class="fg"><label class="fl">Quran</label><select class="fs" id="fqr"><option value="">Select...</option><option>Hafiz / Hafizah</option><option>Reads regularly</option><option>Learning</option></select></div>
       </div>
-      <div class="fg"><label class="fl">My Deen â In My Own Words</label><textarea class="ft" id="fdn" placeholder="How you practice, what Islam means in your life..."></textarea></div>
+      <div class="fg"><label class="fl">My Deen &mdash; In My Own Words</label><textarea class="ft" id="fdn" placeholder="How you practice, what Islam means in your life..."></textarea></div>
     </div>
     <div class="card reveal" style="transition-delay:.14s">
-      <div class="chd"><div class="cic">ð</div><div class="ct">Education &amp; Career</div></div>
+      <div class="chd"><div class="cic">&#127891;</div><div class="ct">Education &amp; Career</div></div>
       <div class="frow">
         <div class="fg"><label class="fl">Qualification</label><select class="fs" id="fed"><option value="">Select...</option><option>High School</option><option>Diploma</option><option>Bachelor's</option><option>Master's</option><option>PhD</option><option>Islamic Studies</option></select></div>
         <div class="fg"><label class="fl">Field of Study</label><input class="fi" id="ffd2" placeholder="Medicine, Engineering..."></div>
       </div>
       <div class="frow">
         <div class="fg"><label class="fl">Occupation</label><input class="fi" id="fjb" placeholder="Doctor, Teacher..."></div>
-        <div class="fg"><label class="fl">Income (optional)</label><select class="fs" id="finc"><option value="">Prefer not to say</option><option>Below AED 5,000</option><option>AED 5â10k</option><option>AED 10â20k</option><option>AED 20k+</option></select></div>
+        <div class="fg"><label class="fl">Income (optional)</label><select class="fs" id="finc"><option value="">Prefer not to say</option><option>Below AED 5,000</option><option>AED 5-10k</option><option>AED 10-20k</option><option>AED 20k+</option></select></div>
       </div>
     </div>
     <div class="card reveal" style="transition-delay:.17s">
-      <div class="chd"><div class="cic">â¤</div><div class="ct">Partner Expectations</div></div>
-      <div class="frow"><div class="fg"><label class="fl">Preferred Age</label><input class="fi" id="fpa" placeholder="e.g. 25â32"></div><div class="fg"><label class="fl">Preferred Nationality</label><input class="fi" id="fpn" placeholder="Any / specific"></div></div>
+      <div class="chd"><div class="cic">&#10084;</div><div class="ct">Partner Expectations</div></div>
+      <div class="frow"><div class="fg"><label class="fl">Preferred Age</label><input class="fi" id="fpa" placeholder="e.g. 25-32"></div><div class="fg"><label class="fl">Preferred Nationality</label><input class="fi" id="fpn" placeholder="Any / specific"></div></div>
       <div class="fg"><label class="fl">Qualities I'm Looking For</label><textarea class="ft" id="fpx" placeholder="Deen, character, values, lifestyle..."></textarea></div>
       <div class="fg"><label class="fl">Conditions (optional)</label><textarea class="ft" id="fpc" placeholder="Important preferences..."></textarea></div>
     </div>
     <div class="card reveal" style="transition-delay:.2s">
-      <div class="chd"><div class="cic">ð</div><div class="ct">Contact</div></div>
+      <div class="chd"><div class="cic">&#128222;</div><div class="ct">Contact</div></div>
       <p style="font-size:.75rem;color:rgba(255,255,255,.32);margin-bottom:.85rem">Use a wali / family member's contact for Islamic etiquette.</p>
       <div class="frow"><div class="fg"><label class="fl">Contact Name</label><input class="fi" id="fcn" placeholder="e.g. Brother Ahmad"></div><div class="fg"><label class="fl">Relationship</label><input class="fi" id="fcr" placeholder="Father, Brother..."></div></div>
       <div class="frow"><div class="fg"><label class="fl">WhatsApp / Phone</label><input class="fi" id="fph" type="tel" placeholder="+971..." inputmode="tel"></div><div class="fg"><label class="fl">Email (optional)</label><input class="fi" id="fem" type="email" placeholder="contact@email.com" inputmode="email"></div></div>
     </div>
-    <button class="btn btn-gold" onclick="saveBio()">â¦ Save Biodata</button>
-
+    <button class="btn btn-gold" onclick="saveBio()">&#10022; Save Biodata</button>
     <div class="card reveal" style="transition-delay:.23s">
-      <div class="chd"><div class="cic">ð·</div><div class="ct">Manage Photos</div></div>
+      <div class="chd"><div class="cic">&#128247;</div><div class="ct">Manage Photos</div></div>
       <p style="font-size:.75rem;color:rgba(255,255,255,.32);margin-bottom:.85rem">Uploaded to ImgBB (free, permanent). Max 10 photos.</p>
       <div id="pal" class="al"></div>
       <div class="upzone" onclick="document.getElementById('pfi').click()">
-        <p>ð· <strong>Tap to select a photo</strong></p>
-        <p style="margin-top:4px">JPG or PNG Â· up to 8MB</p>
+        <p>&#128247; <strong>Tap to select a photo</strong></p>
+        <p style="margin-top:4px">JPG or PNG &middot; up to 8MB</p>
       </div>
       <input type="file" id="pfi" accept="image/*" style="display:none" onchange="uploadPhoto(this)">
-      <div id="uprog" style="display:none;text-align:center;padding:.85rem;color:rgba(255,255,255,.38);font-size:.82rem">â³ Uploading...</div>
+      <div id="uprog" style="display:none;text-align:center;padding:.85rem;color:rgba(255,255,255,.38);font-size:.82rem">Uploading...</div>
       <div id="pmanage"></div>
     </div>
   </div>
 
-  <!-- PAGE: DASHBOARD -->
+  <!-- DASHBOARD PAGE -->
   <div class="page" id="pdash">
     <div class="sgrid reveal">
-      <div class="sc"><div class="sn" id="st">â</div><div class="sl">Total Views</div></div>
-      <div class="sc"><div class="sn" id="sd">â</div><div class="sl">Today</div></div>
-      <div class="sc"><div class="sn" id="sw">â</div><div class="sl">This Week</div></div>
-      <div class="sc"><div class="sn" id="sc2">â</div><div class="sl">Countries</div></div>
+      <div class="sc"><div class="sn" id="st">-</div><div class="sl">Total Views</div></div>
+      <div class="sc"><div class="sn" id="sd">-</div><div class="sl">Today</div></div>
+      <div class="sc"><div class="sn" id="sw">-</div><div class="sl">This Week</div></div>
+      <div class="sc"><div class="sn" id="sc2">-</div><div class="sl">Countries</div></div>
     </div>
     <div class="card reveal" style="transition-delay:.1s">
-      <div class="chd"><div class="cic">ð</div><div class="ct">Visitor Log</div><button class="btn btn-ghost btn-sm" style="margin-left:auto" onclick="loadDash()">âº</button></div>
+      <div class="chd"><div class="cic">&#127758;</div><div class="ct">Visitor Log</div><button class="btn btn-ghost btn-sm" style="margin-left:auto" onclick="loadDash()">Refresh</button></div>
       <div id="vlog"><div style="text-align:center;padding:2rem;color:rgba(255,255,255,.22);font-size:.85rem">Loading...</div></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div class="card reveal" style="transition-delay:.15s"><div class="chd"><div class="cic">ð</div><div class="ct" style="font-size:.95rem">Countries</div></div><div id="vcountries"></div></div>
-      <div class="card reveal" style="transition-delay:.18s"><div class="chd"><div class="cic">ð±</div><div class="ct" style="font-size:.95rem">Devices</div></div><div id="vdevices"></div></div>
+      <div class="card reveal" style="transition-delay:.15s"><div class="chd"><div class="cic">&#128205;</div><div class="ct" style="font-size:.95rem">Countries</div></div><div id="vcountries"></div></div>
+      <div class="card reveal" style="transition-delay:.18s"><div class="chd"><div class="cic">&#128241;</div><div class="ct" style="font-size:.95rem">Devices</div></div><div id="vdevices"></div></div>
     </div>
     <div class="card reveal" style="transition-delay:.22s;margin-top:1rem">
-      <div class="chd"><div class="cic">â</div><div class="ct">Settings</div></div>
+      <div class="chd"><div class="cic">&#9881;</div><div class="ct">Settings</div></div>
       <p style="font-size:.75rem;color:rgba(255,255,255,.32);margin-bottom:.4rem">Admin link (keep private):</p>
-      <div class="lbox"><code id="alink">â</code><button class="lcopy" onclick="cpLink('alink')">Copy</button></div>
-      <button class="btn btn-danger btn-sm" onclick="clearLogs()">ð Clear Visitor Logs</button>
+      <div class="lbox"><code id="alink">-</code><button class="lcopy" onclick="cpLink('alink')">Copy</button></div>
+      <button class="btn btn-danger btn-sm" onclick="clearLogs()">Clear Visitor Logs</button>
     </div>
   </div>
-
-</div><!-- /#app -->
+</div>
 
 <script>
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  CANVAS
-// ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── CANVAS ──────────────────────────────────────────────
 (function(){
-  const cv=document.getElementById('bg-canvas'),ctx=cv.getContext('2d');
-  let W,H,stars=[],parts=[];
+  var cv=document.getElementById('bg-canvas'),ctx=cv.getContext('2d');
+  var W,H,stars=[],parts=[];
   function resize(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
   resize();window.addEventListener('resize',resize);
-  const mob=W<640,NS=mob?70:130,NP=mob?8:18;
-  for(let i=0;i<NS;i++)stars.push({x:Math.random()*3000,y:Math.random()*3000,r:Math.random()*1.1+.2,a:Math.random()*.55+.1});
-  const sh=['s6','di','sq','tr'];
-  for(let i=0;i<NP;i++)parts.push({x:Math.random()*2000,y:Math.random()*2000,sz:Math.random()*13+5,sh:sh[i%4],vx:(Math.random()-.5)*.1,vy:(Math.random()-.5)*.1,va:(Math.random()-.5)*.003,an:Math.random()*Math.PI*2,al:Math.random()*.08+.02});
-  function s6(c,x,y,r){c.beginPath();for(let i=0;i<12;i++){const a=i*Math.PI/6,ri=i%2?r/2:r;i===0?c.moveTo(x+ri*Math.cos(a),y+ri*Math.sin(a)):c.lineTo(x+ri*Math.cos(a),y+ri*Math.sin(a));}c.closePath();}
-  function di(c,x,y,r){c.beginPath();c.moveTo(x,y-r);c.lineTo(x+r*.6,y);c.lineTo(x,y+r);c.lineTo(x-r*.6,y);c.closePath();}
+  var mob=W<640,NS=mob?70:130,NP=mob?8:18;
+  for(var i=0;i<NS;i++)stars.push({x:Math.random()*3000,y:Math.random()*3000,r:Math.random()*1.1+.2,a:Math.random()*.55+.1});
+  var sh=['s6','di','sq','tr'];
+  for(var i=0;i<NP;i++)parts.push({x:Math.random()*2000,y:Math.random()*2000,sz:Math.random()*13+5,sh:sh[i%4],vx:(Math.random()-.5)*.1,vy:(Math.random()-.5)*.1,va:(Math.random()-.5)*.003,an:Math.random()*Math.PI*2,al:Math.random()*.08+.02});
   function tick(){
-    ctx.clearRect(0,0,W,H);const sy=window.scrollY||0;
-    const gr=ctx.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#0D2318');gr.addColorStop(1,'#081910');
+    ctx.clearRect(0,0,W,H);var sy=window.scrollY||0;
+    var gr=ctx.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#0D2318');gr.addColorStop(1,'#081910');
     ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
-    stars.forEach(s=>{ctx.beginPath();ctx.arc(s.x%W,(s.y-sy*.03)%H,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(245,230,184,${s.a*.4})`;ctx.fill();});
-    parts.forEach(p=>{
+    stars.forEach(function(s){ctx.beginPath();ctx.arc(s.x%W,(s.y-sy*.03)%H,s.r,0,Math.PI*2);ctx.fillStyle='rgba(245,230,184,'+s.a*.4+')';ctx.fill();});
+    parts.forEach(function(p){
       p.x+=p.vx;p.y+=p.vy;p.an+=p.va;
       if(p.x<-40)p.x=W+40;if(p.x>W+40)p.x=-40;if(p.y<-40)p.y=H+100;if(p.y>H+100)p.y=-40;
       ctx.save();ctx.translate(p.x,p.y-sy*.05);ctx.rotate(p.an);
-      ctx.strokeStyle=`rgba(201,168,76,${p.al})`;ctx.lineWidth=.7;
-      if(p.sh==='s6')s6(ctx,0,0,p.sz);else if(p.sh==='di')di(ctx,0,0,p.sz);
-      else if(p.sh==='sq'){ctx.beginPath();ctx.rect(-p.sz/2,-p.sz/2,p.sz,p.sz);}
-      else{ctx.beginPath();ctx.moveTo(0,-p.sz);ctx.lineTo(p.sz*.86,p.sz*.5);ctx.lineTo(-p.sz*.86,p.sz*.5);ctx.closePath();}
+      ctx.strokeStyle='rgba(201,168,76,'+p.al+')';ctx.lineWidth=.7;
+      ctx.beginPath();
+      if(p.sh==='s6'){for(var i=0;i<12;i++){var a=i*Math.PI/6,ri=i%2?p.sz/2:p.sz;i===0?ctx.moveTo(ri*Math.cos(a),ri*Math.sin(a)):ctx.lineTo(ri*Math.cos(a),ri*Math.sin(a));}ctx.closePath();}
+      else if(p.sh==='di'){ctx.moveTo(0,-p.sz);ctx.lineTo(p.sz*.6,0);ctx.lineTo(0,p.sz);ctx.lineTo(-p.sz*.6,0);ctx.closePath();}
+      else if(p.sh==='sq'){ctx.rect(-p.sz/2,-p.sz/2,p.sz,p.sz);}
+      else{ctx.moveTo(0,-p.sz);ctx.lineTo(p.sz*.86,p.sz*.5);ctx.lineTo(-p.sz*.86,p.sz*.5);ctx.closePath();}
       ctx.stroke();ctx.restore();
     });
-    const gl=ctx.createRadialGradient(W/2,H*.35,0,W/2,H*.35,W*.5);
-    gl.addColorStop(0,'rgba(45,90,61,.07)');gl.addColorStop(1,'transparent');
-    ctx.fillStyle=gl;ctx.fillRect(0,0,W,H);
     requestAnimationFrame(tick);
   }
   tick();
 })();
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  REVEAL + NAME ANIMATION
-// ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── REVEAL + ANIMATIONS ─────────────────────────────────
 function initReveal(){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('in');io.observe(el);});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.remove('in');io.observe(el);});
 }
 function animName(text){
-  const el=document.getElementById('hname');el.innerHTML='';let delay=1.55;
-  [...text].forEach(c=>{
-    if(c===' '){const s=document.createElement('span');s.className='sp';el.appendChild(s);delay+=.03;return;}
-    const s=document.createElement('span');s.className='ch';s.textContent=c;s.style.animationDelay=delay+'s';el.appendChild(s);delay+=.06;
+  var el=document.getElementById('hname');el.innerHTML='';var delay=1.55;
+  Array.from(text).forEach(function(c){
+    if(c===' '){var sp=document.createElement('span');sp.className='sp';el.appendChild(sp);delay+=.03;return;}
+    var sp=document.createElement('span');sp.className='ch';sp.textContent=c;sp.style.animationDelay=delay+'s';el.appendChild(sp);delay+=.06;
   });
 }
-function countUp(el,n,d=1000){
-  const t=performance.now();
-  (function f(now){const p=Math.min((now-t)/d,1);el.textContent=Math.round(p*p*n);if(p<1)requestAnimationFrame(f);else el.textContent=n;})(t);
+function countUp(el,n,d){
+  d=d||1000;var t=performance.now();
+  (function f(now){var p=Math.min((now-t)/d,1);el.textContent=Math.round(p*p*n);if(p<1)requestAnimationFrame(f);else el.textContent=n;})(t);
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  CONFIG â read from the <script id="app-config"> tag
-//  This is how we bake keys into the file itself
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-function getCFG(){
-  // File config (safe - only masterBinId)
-  let fileCfg={};
-  try{fileCfg=JSON.parse(document.getElementById('app-config').textContent);}catch(e){}
-  // Admin keys stored in localStorage (only present on admin's device)
-  let localCfg={};
-  try{localCfg=JSON.parse(localStorage.getItem('ibadmin')||'{}');}catch(e){}
-  return {...fileCfg,...localCfg};
+// ── CONFIG ───────────────────────────────────────────────
+// masterBinId is stored in the HTML comment marker (written by GitHub API during setup)
+// All other config (keys, bin IDs) stored ONLY in localStorage - never in the file
+function getMasterBinId(){
+  var html=document.documentElement.innerHTML;
+  var m=html.match(/<!--MASTER_BIN_ID:([\w]+)-->/);
+  return m?m[1]:'';
+}
+function getLCFG(){
+  try{return JSON.parse(localStorage.getItem('ibcfg')||'{}');}catch(e){return {};}
 }
 function saveLCFG(o){
-  let cur={};
-  try{cur=JSON.parse(localStorage.getItem('ibadmin')||'{}');}catch(e){}
-  localStorage.setItem('ibadmin',JSON.stringify({...cur,...o}));
+  var cur=getLCFG();
+  localStorage.setItem('ibcfg',JSON.stringify(Object.assign({},cur,o)));
 }
-// Configured = masterBinId baked into file (means setup was completed)
-function isConfigured(){
-  try{
-    const fileCfg=JSON.parse(document.getElementById('app-config').textContent);
-    return !!(fileCfg.masterBinId);
-  }catch(e){return false;}
+function isSetupDone(){
+  // Setup is done if masterBinId is baked into the file
+  return !!getMasterBinId();
 }
-function isAdminMode(){
-  const searchStr=location.search||(location.href.includes('?')?'?'+location.href.split('?')[1]:'');
-  const p=new URLSearchParams(searchStr);
-  const ek=p.get('edit');
-  if(!ek) return false;
-  const c=getCFG();
-  if(!c.adminPass) return true;
-  return ek===c.adminPass;
-}
-
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  GITHUB API â patch index.html with new config
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-async function patchGitHubConfig(masterBinId,ghUser,ghRepo,ghToken){
-  // Only write the masterBinId into the file - no API keys, no secrets
-  const fileRes=await fetch(`https://api.github.com/repos/${ghUser}/${ghRepo}/contents/index.html`,{
-    headers:{'Authorization':`token ${ghToken}`,'Accept':'application/vnd.github.v3+json'}
-  });
-  if(!fileRes.ok) throw new Error('Cannot read file from GitHub. Check your username, repo name and token.');
-  const fileData=await fileRes.json();
-  const sha=fileData.sha;
-  let html=atob(fileData.content.replace(/\n/g,''));
-  const marker='"masterBinId": ""';
-  const replacement=`"masterBinId": "${masterBinId}"`;
-  if(!html.includes(marker)) throw new Error('Config marker not found. Make sure you uploaded the correct index.html file.');
-  html=html.replace(marker,replacement);
-  const pushRes=await fetch(`https://api.github.com/repos/${ghUser}/${ghRepo}/contents/index.html`,{
-    method:'PUT',
-    headers:{'Authorization':`token ${ghToken}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
-    body:JSON.stringify({message:'biodata: init',content:btoa(unescape(encodeURIComponent(html))),sha})
-  });
-  if(!pushRes.ok){const e=await pushRes.json();throw new Error(e.message||'GitHub push failed');}
-}
-
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  BOOT
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-window.addEventListener('load',async()=>{
-  setTimeout(()=>{document.getElementById('loader').classList.add('out');document.getElementById('app').classList.add('show');initReveal();},1800);
-
-  const admin=isAdminMode();
-  const configured=isConfigured();
-
-  // Case 1: not configured AND admin â show setup
-  if(!configured&&admin){
-    document.getElementById('setup').style.display='block';
-    return;
+function getEditKey(){
+  // Read ?edit= from URL - works with or without trailing slash
+  var search=location.search;
+  if(!search&&location.href.indexOf('?')!==-1){
+    search='?'+location.href.split('?')[1];
   }
-  // Case 2: not configured AND not admin â show biodata page with empty state (viewer never sees setup)
-  if(!configured&&!admin){
-    animName('Islamic Marriage Biodata');
-    // Show a coming soon message instead of setup form
-    s('bp','<div class="bemp" style="padding:2rem">Profile coming soon. Check back shortly. Ø¥Ù Ø´Ø§Ø¡ Ø§ÙÙÙ</div>');
-    s('bf','<div class="bemp">â</div>');s('br','<div class="bemp">â</div>');
-    s('be','<div class="bemp">â</div>');s('bpt','<div class="bemp">â</div>');
-    s('bc','<div class="bemp">â</div>');
-    return;
-  }
-  // Case 3: configured â fetch master bin to get full config, then load
-  try{
-    const fileCfg=JSON.parse(document.getElementById('app-config').textContent);
-    const masterBinId=fileCfg.masterBinId;
-    // Fetch master config from JSONBin using a temp fetch (we need jk from master bin)
-    // Problem: we need jk to fetch master bin, but jk is IN master bin.
-    // Solution: admin stores jk in localStorage. Viewer gets config from a public-readable endpoint.
-    // We store jsonbinKey in localStorage on admin device during setup.
-    // For viewers: we use the X-Access-Key header trick with a read-only key.
-    // Simplest: store the jsonbinKey in a separate tiny public bin, ID baked in file.
-    // ACTUAL SIMPLEST: store full config (including keys) in localStorage on admin device,
-    // and for viewers, store ONLY the needed read keys in the HTML (not the master key).
-    // 
-    // For now: load from localStorage if admin, for viewers use cached data in master bin
-    // by making the master bin public-readable only.
-    let cfg=getCFG();
-    if(!cfg.jsonbinKey){
-      // Viewer device - need to fetch config from master bin without auth
-      // Make master bin public in JSONBin (we set X-Bin-Private: false)
-      // Then fetch without key
-      const res=await fetch(`https://api.jsonbin.io/v3/b/${masterBinId}/latest`);
-      const j=await res.json();
-      if(j.record){
-        cfg={...cfg,...j.record};
-        saveLCFG(j.record);
-      }
+  return new URLSearchParams(search).get('edit')||'';
+}
+
+// ── BOOT ─────────────────────────────────────────────────
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    document.getElementById('loader').classList.add('out');
+    document.getElementById('app').classList.add('show');
+    initReveal();
+  },1800);
+
+  var masterBinId=getMasterBinId();
+  var editKey=getEditKey();
+  var lcfg=getLCFG();
+
+  // NOT SET UP YET — only show setup if ?edit= is in URL
+  if(!masterBinId){
+    if(editKey){
+      document.getElementById('setup').style.display='block';
+    } else {
+      // Visitor before setup complete
+      animName('Islamic Marriage Biodata');
+      setEmpty();
     }
-    if(admin) activateAdmin();
-    else logVisit();
-    animName(cfg.cachedName||'Islamic Marriage Biodata');
-    await loadBio();
-    await loadPhotos();
-    if(admin) await loadDash();
-  }catch(e){
-    animName('Islamic Marriage Biodata');
-    s('bp','<div class="bemp">Could not load profile. Please try again.</div>');
+    return;
   }
+
+  // SET UP — check if admin
+  // Admin = has ?edit= AND password matches stored password
+  // On admin's own device, password is in localStorage
+  // On a new device with ?edit=, we need to verify against master bin
+  var storedPass=lcfg.adminPass||'';
+  var isAdmin=editKey&&storedPass&&editKey===storedPass;
+
+  if(isAdmin){
+    activateAdmin();
+    animName(lcfg.cachedName||'Islamic Marriage Biodata');
+    loadBio();
+    loadPhotos();
+    loadDash();
+    return;
+  }
+
+  // Has ?edit= but password not in localStorage yet - fetch master bin to verify
+  if(editKey&&!storedPass){
+    fetchMasterAndBoot(masterBinId,editKey);
+    return;
+  }
+
+  // Viewer
+  animName(lcfg.cachedName||'Islamic Marriage Biodata');
+  fetchMasterAndBoot(masterBinId,null);
 });
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  SETUP
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-async function doSetup(){
-  const gu=g('sgu'),gr2=g('sgr'),gt=g('sgt'),jk=g('sjb'),ik=g('sib'),ap=g('sap');
-  const al=document.getElementById('sal');
-  if(!gu||!gr2||!gt||!jk||!ik||!ap){showAl(al,'Please fill in all fields.','err');return;}
-  showAl(al,'Step 1/3 â Creating storage bins...','inf');
+async function fetchMasterAndBoot(masterBinId,editKey){
   try{
-    const b1=await mkBin({personal:{},family:{},religious:{},education:{},partner:{},contact:{}},jk,'Biodata');
-    const b2=await mkBin({photos:[]},jk,'Photos');
-    const b3=await mkBin({visits:[]},jk,'Analytics');
-    // Master bin stores all config - only its ID goes into the HTML file
-    const masterData={biodataId:b1,photosId:b2,analyticsId:b3,imgbbKey:ik,jsonbinKey:jk,adminPass:ap,cachedName:'Islamic Marriage Biodata'};
-    const masterBinId=await mkBin(masterData,jk,'Master',true);// public so viewers can read
-    showAl(al,'Step 2/3 â Saving to GitHub (no secrets in file)...','inf');
-    await patchGitHubConfig(masterBinId,gu,gr2,gt);
-    // Save full config in admin localStorage too
-    saveLCFG(masterData);
-    saveLCFG({masterBinId});
-    showAl(al,'Step 3/3 â Done! Page will reload in ~40 seconds after GitHub redeploys...','ok');
-    setTimeout(()=>location.reload(),40000);
-  }catch(e){showAl(al,'Error: '+e.message,'err');}
-}
-async function mkBin(data,key,name,isPublic=false){
-  const r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Master-Key':key,'X-Bin-Name':name,'X-Bin-Private':isPublic?'false':'true'},body:JSON.stringify(data)});
-  const j=await r.json();if(!j.metadata)throw new Error('Invalid JSONBin key â check and try again');return j.metadata.id;
+    // Master bin is public - no key needed
+    var res=await fetch('https://api.jsonbin.io/v3/b/'+masterBinId+'/latest');
+    var j=await res.json();
+    if(!j.record) throw new Error('Could not load config');
+    var cfg=j.record;
+    // Cache in localStorage for faster future loads
+    saveLCFG(cfg);
+    // Check if this is admin with correct password
+    if(editKey&&cfg.adminPass&&editKey===cfg.adminPass){
+      activateAdmin();
+      animName(cfg.cachedName||'Islamic Marriage Biodata');
+      loadBio();loadPhotos();loadDash();
+    } else {
+      animName(cfg.cachedName||'Islamic Marriage Biodata');
+      logVisit(cfg);
+      loadBio();loadPhotos();
+    }
+  }catch(e){
+    animName('Islamic Marriage Biodata');
+    setEmpty();
+  }
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  ADMIN ACTIVATE
-// ââââââââââââââââââââââââââââââââââââââââââââââ
+function setEmpty(){
+  ['bp','bf','br','be','bpt','bc'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.innerHTML='<div class="bemp">No information yet.</div>';
+  });
+}
+
+// ── SETUP ────────────────────────────────────────────────
+async function doSetup(){
+  var gu=g('sgu'),gr=g('sgr'),gt=g('sgt'),jk=g('sjb'),ik=g('sib'),ap=g('sap');
+  var al=document.getElementById('sal');
+  if(!gu||!gr||!gt||!jk||!ik||!ap){showAl(al,'Please fill in all fields.','err');return;}
+  showAl(al,'Step 1/3 — Creating storage bins...','inf');
+  try{
+    var b1=await mkBin({personal:{},family:{},religious:{},education:{},partner:{},contact:{}},jk,'Biodata');
+    var b2=await mkBin({photos:[]},jk,'Photos');
+    var b3=await mkBin({visits:[]},jk,'Analytics');
+    // Master bin is PUBLIC so viewers can read config without needing a key
+    var masterData={biodataId:b1,photosId:b2,analyticsId:b3,imgbbKey:ik,jsonbinKey:jk,adminPass:ap,cachedName:'Islamic Marriage Biodata'};
+    var masterBinId=await mkBin(masterData,jk,'Master',true);
+    showAl(al,'Step 2/3 — Writing bin ID to your GitHub file...','inf');
+    await writeToGitHub(masterBinId,gu,gr,gt);
+    // Save full config in admin localStorage
+    saveLCFG(masterData);
+    saveLCFG({masterBinId:masterBinId});
+    showAl(al,'Done! GitHub is redeploying. This takes about 60 seconds. Page will reload automatically.','ok');
+    setTimeout(function(){location.reload();},60000);
+  }catch(e){showAl(al,'Error: '+e.message,'err');}
+}
+
+async function writeToGitHub(masterBinId,ghUser,ghRepo,ghToken){
+  // Get current file
+  var fileRes=await fetch('https://api.github.com/repos/'+ghUser+'/'+ghRepo+'/contents/index.html',{
+    headers:{'Authorization':'token '+ghToken,'Accept':'application/vnd.github.v3+json'}
+  });
+  if(!fileRes.ok){
+    var err=await fileRes.json();
+    throw new Error(err.message||'Could not read file from GitHub. Check username, repo name and token.');
+  }
+  var fileData=await fileRes.json();
+  var sha=fileData.sha;
+  // Decode file content - use TextDecoder for proper UTF-8 handling
+  var binaryStr=atob(fileData.content.replace(/\n/g,''));
+  var bytes=new Uint8Array(binaryStr.length);
+  for(var i=0;i<binaryStr.length;i++) bytes[i]=binaryStr.charCodeAt(i);
+  var html=new TextDecoder('utf-8').decode(bytes);
+  // Replace the marker comment - only the bin ID goes in, no secrets
+  var oldMarker='<!--MASTER_BIN_ID:-->';
+  var newMarker='<!--MASTER_BIN_ID:'+masterBinId+'-->';
+  if(html.indexOf(oldMarker)===-1) throw new Error('Marker not found in file. Please re-download and re-upload index.html.');
+  html=html.replace(oldMarker,newMarker);
+  // Encode back to base64 using TextEncoder for proper UTF-8
+  var encoded=new TextEncoder().encode(html);
+  var binStr='';
+  encoded.forEach(function(b){binStr+=String.fromCharCode(b);});
+  var b64=btoa(binStr);
+  // Push to GitHub
+  var pushRes=await fetch('https://api.github.com/repos/'+ghUser+'/'+ghRepo+'/contents/index.html',{
+    method:'PUT',
+    headers:{'Authorization':'token '+ghToken,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+    body:JSON.stringify({message:'biodata: setup complete',content:b64,sha:sha})
+  });
+  if(!pushRes.ok){
+    var e2=await pushRes.json();
+    throw new Error(e2.message||'GitHub push failed');
+  }
+}
+
+async function mkBin(data,key,name,isPublic){
+  var priv=isPublic?'false':'true';
+  var r=await fetch('https://api.jsonbin.io/v3/b',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','X-Master-Key':key,'X-Bin-Name':name,'X-Bin-Private':priv},
+    body:JSON.stringify(data)
+  });
+  var j=await r.json();
+  if(!j.metadata) throw new Error('Invalid JSONBin key. Check it and try again.');
+  return j.metadata.id;
+}
+
+// ── ADMIN ────────────────────────────────────────────────
 function activateAdmin(){
   document.getElementById('ebar').style.display='flex';
   document.getElementById('tedit').style.display='flex';
   document.getElementById('tdash').style.display='flex';
-  const base=location.href.split('?')[0];
+  var base=location.href.split('?')[0];
+  var pass=getLCFG().adminPass||'';
   document.getElementById('slink').textContent=base;
-  document.getElementById('alink').textContent=base+'?edit='+(getCFG().adminPass||'');
+  document.getElementById('alink').textContent=base+'?edit='+pass;
   document.getElementById('eb-u').textContent=base.replace('https://','').substring(0,45);
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  JSONBIN HELPERS
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-async function getBin(id){const c=getCFG();const r=await fetch(`https://api.jsonbin.io/v3/b/${id}/latest`,{headers:{'X-Master-Key':c.jsonbinKey}});const j=await r.json();return j.record;}
-async function putBin(id,data){const c=getCFG();await fetch(`https://api.jsonbin.io/v3/b/${id}`,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':c.jsonbinKey},body:JSON.stringify(data)});}
+// ── JSONBIN ──────────────────────────────────────────────
+async function getBin(id){
+  var jk=getLCFG().jsonbinKey;
+  var r=await fetch('https://api.jsonbin.io/v3/b/'+id+'/latest',{headers:{'X-Master-Key':jk}});
+  var j=await r.json();return j.record;
+}
+async function putBin(id,data){
+  var jk=getLCFG().jsonbinKey;
+  await fetch('https://api.jsonbin.io/v3/b/'+id,{
+    method:'PUT',
+    headers:{'Content-Type':'application/json','X-Master-Key':jk},
+    body:JSON.stringify(data)
+  });
+}
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  BIODATA
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-function row(lbl,val){if(!val)return '';return `<div class="brow"><span class="blbl">${lbl}</span><span class="bval">${val}</span></div>`;}
-function desc(t){return t?`<div class="bdsc">${t}</div>`:'';}
+// ── BIODATA ──────────────────────────────────────────────
+function row(lbl,val){if(!val)return '';return '<div class="brow"><span class="blbl">'+lbl+'</span><span class="bval">'+val+'</span></div>';}
+function desc(t){return t?'<div class="bdsc">'+t+'</div>':'';}
 function emp(){return '<div class="bemp">No information added yet.</div>';}
+
 async function loadBio(){
-  const c=getCFG();if(!c.biodataId)return;
+  var cfg=getLCFG();if(!cfg.biodataId)return;
   try{
-    const d=await getBin(c.biodataId);
-    const p=d.personal||{},f=d.family||{},rl=d.religious||{},e=d.education||{},pt=d.partner||{},ct=d.contact||{};
-    if(p.name) animName(p.name);
+    var d=await getBin(cfg.biodataId);
+    var p=d.personal||{},f=d.family||{},rl=d.religious||{},e=d.education||{},pt=d.partner||{},ct=d.contact||{};
+    if(p.name){animName(p.name);saveLCFG({cachedName:p.name});}
     s('bp',row('Full Name',p.name)+row('Age',p.age)+row('Date of Birth',p.dob)+row('Nationality',p.nationality)+row('Ethnicity',p.ethnicity)+row('City',p.loc)+row('Height',p.ht)+row('Complexion',p.cx)+row('Marital Status',p.ms)+row('Languages',p.lg)+desc(p.ab)||emp());
     s('bf',row('Father',f.fa)+row('Mother',f.mo)+row('Siblings',f.sib)+row('Family Type',f.ft)+desc(f.fd)||emp());
     s('br',row('Madhab',rl.mh)+row('Daily Prayer',rl.sl)+row('Hijab / Appearance',rl.hj)+row('Quran',rl.qr)+desc(rl.dn)||emp());
     s('be',row('Qualification',e.ed)+row('Field',e.fd)+row('Occupation',e.jb)+row('Income',e.inc)||emp());
-    s('bpt',row('Preferred Age',pt.pa)+row('Preferred Nationality',pt.pn)+(pt.px?`<div class="brow"><span class="blbl">Looking For</span><span class="bval">${pt.px}</span></div>`:'')+( pt.pc?`<div class="brow"><span class="blbl">Conditions</span><span class="bval">${pt.pc}</span></div>`:'')||emp());
+    s('bpt',row('Preferred Age',pt.pa)+row('Preferred Nationality',pt.pn)+(pt.px?'<div class="brow"><span class="blbl">Looking For</span><span class="bval">'+pt.px+'</span></div>':'')+(pt.pc?'<div class="brow"><span class="blbl">Conditions</span><span class="bval">'+pt.pc+'</span></div>':'')||emp());
     s('bc',row('Contact Name',ct.cn)+row('Relationship',ct.cr)+row('WhatsApp',ct.ph)+row('Email',ct.em)||emp());
     sv('fn',p.name);sv('fa',p.age);sv('fdob',p.dob);sv('fnat',p.nationality);sv('feth',p.ethnicity);sv('floc',p.loc);sv('fht',p.ht);sv('fcx',p.cx);sv('fms',p.ms);sv('flg',p.lg);sv('fab',p.ab);
     sv('ffa',f.fa);sv('fmo',f.mo);sv('fsib',f.sib);sv('fft',f.ft);sv('ffd',f.fd);
@@ -676,13 +639,14 @@ async function loadBio(){
     sv('fed',e.ed);sv('ffd2',e.fd);sv('fjb',e.jb);sv('finc',e.inc);
     sv('fpa',pt.pa);sv('fpn',pt.pn);sv('fpx',pt.px);sv('fpc',pt.pc);
     sv('fcn',ct.cn);sv('fcr',ct.cr);sv('fph',ct.ph);sv('fem',ct.em);
-  }catch(e){}
+  }catch(e){console.log('loadBio error',e);}
 }
+
 async function saveBio(){
-  const al=document.getElementById('eal');showAl(al,'Saving...','inf');
+  var al=document.getElementById('eal');showAl(al,'Saving...','inf');
+  var cfg=getLCFG();
   try{
-    const c=getCFG();
-    const data={
+    var data={
       personal:{name:g('fn'),age:g('fa'),dob:g('fdob'),nationality:g('fnat'),ethnicity:g('feth'),loc:g('floc'),ht:g('fht'),cx:g('fcx'),ms:g('fms'),lg:g('flg'),ab:g('fab')},
       family:{fa:g('ffa'),mo:g('fmo'),sib:g('fsib'),ft:g('fft'),fd:g('ffd')},
       religious:{mh:g('fmh'),sl:g('fsl'),hj:g('fhj'),qr:g('fqr'),dn:g('fdn')},
@@ -690,117 +654,112 @@ async function saveBio(){
       partner:{pa:g('fpa'),pn:g('fpn'),px:g('fpx'),pc:g('fpc')},
       contact:{cn:g('fcn'),cr:g('fcr'),ph:g('fph'),em:g('fem')}
     };
-    await putBin(c.biodataId,data);
-    // Also update cached name in GitHub file if name changed
-    const newName=g('fn');
-    if(newName&&newName!==c.cachedName){
-      try{
-        const updatedCfg={...c,cachedName:newName};
-        await patchGitHubConfig(updatedCfg,c.githubUser,c.githubRepo,c.githubToken);
-      }catch(e){}// non-fatal
-    }
-    showAl(al,'â¦ Saved! Alhamdulillah.','ok');
+    await putBin(cfg.biodataId,data);
+    if(g('fn')) saveLCFG({cachedName:g('fn')});
+    showAl(al,'Saved! Alhamdulillah.','ok');
     await loadBio();
   }catch(e){showAl(al,'Error: '+e.message,'err');}
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  PHOTOS
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-let photos={photos:[]};
-async function loadPhotos(){const c=getCFG();if(!c.photosId)return;try{photos=await getBin(c.photosId);renderGallery();renderManage();}catch(e){}}
+// ── PHOTOS ───────────────────────────────────────────────
+var photos={photos:[]};
+async function loadPhotos(){
+  var cfg=getLCFG();if(!cfg.photosId)return;
+  try{photos=await getBin(cfg.photosId);renderGallery();renderManage();}catch(e){}
+}
 function renderGallery(){
-  const el=document.getElementById('pgallery');
-  if(!photos.photos?.length){el.innerHTML='<div class="pemp">No photos added yet.</div>';return;}
-  el.innerHTML=photos.photos.map((p,i)=>`<div class="pitem" onclick="openLB('${p.url}')"><img src="${p.url}" loading="lazy" alt="Photo ${i+1}"></div>`).join('');
+  var el=document.getElementById('pgallery');
+  if(!photos.photos||!photos.photos.length){el.innerHTML='<div class="pemp">No photos added yet.</div>';return;}
+  el.innerHTML=photos.photos.map(function(p,i){return '<div class="pitem" onclick="openLB(\''+p.url+'\')"><img src="'+p.url+'" loading="lazy" alt="Photo '+(i+1)+'"></div>';}).join('');
 }
 function renderManage(){
-  const el=document.getElementById('pmanage');if(!el)return;
-  if(!photos.photos?.length){el.innerHTML='<p style="font-size:.78rem;color:rgba(255,255,255,.25)">No photos yet.</p>';return;}
-  el.innerHTML=photos.photos.map((p,i)=>`<div class="pm-item"><img src="${p.thumb||p.url}" alt=""><div class="info">${p.name||'Photo '+(i+1)}</div><button class="btn btn-danger btn-sm" onclick="delPhoto(${i})">Remove</button></div>`).join('');
+  var el=document.getElementById('pmanage');if(!el)return;
+  if(!photos.photos||!photos.photos.length){el.innerHTML='<p style="font-size:.78rem;color:rgba(255,255,255,.25)">No photos yet.</p>';return;}
+  el.innerHTML=photos.photos.map(function(p,i){return '<div class="pm-item"><img src="'+(p.thumb||p.url)+'" alt=""><div class="info">'+(p.name||'Photo '+(i+1))+'</div><button class="btn btn-danger btn-sm" onclick="delPhoto('+i+')">Remove</button></div>';}).join('');
 }
 async function uploadPhoto(inp){
   if(!inp.files[0])return;
-  const al=document.getElementById('pal'),pr=document.getElementById('uprog'),c=getCFG();
-  if(!c.imgbbKey){showAl(al,'ImgBB key missing.','err');return;}
+  var al=document.getElementById('pal'),pr=document.getElementById('uprog'),cfg=getLCFG();
+  if(!cfg.imgbbKey){showAl(al,'ImgBB key not found. Try opening admin link again.','err');return;}
   pr.style.display='block';
-  const form=new FormData();form.append('image',inp.files[0]);form.append('key',c.imgbbKey);
+  var form=new FormData();form.append('image',inp.files[0]);form.append('key',cfg.imgbbKey);
   try{
-    const r=await fetch('https://api.imgbb.com/1/upload',{method:'POST',body:form});
-    const j=await r.json();if(!j.success)throw new Error(j.error?.message||'Upload failed');
+    var r=await fetch('https://api.imgbb.com/1/upload',{method:'POST',body:form});
+    var j=await r.json();if(!j.success)throw new Error(j.error&&j.error.message||'Upload failed');
     if(!photos.photos)photos.photos=[];
-    photos.photos.push({url:j.data.url,thumb:j.data.thumb?.url||j.data.url,name:inp.files[0].name,date:new Date().toISOString()});
-    await putBin(c.photosId,photos);
-    showAl(al,'â¦ Photo uploaded!','ok');renderGallery();renderManage();
+    photos.photos.push({url:j.data.url,thumb:j.data.thumb&&j.data.thumb.url||j.data.url,name:inp.files[0].name,date:new Date().toISOString()});
+    await putBin(cfg.photosId,photos);
+    showAl(al,'Photo uploaded! Alhamdulillah.','ok');renderGallery();renderManage();
   }catch(e){showAl(al,'Error: '+e.message,'err');}
   finally{pr.style.display='none';inp.value='';}
 }
-async function delPhoto(i){if(!confirm('Remove this photo?'))return;photos.photos.splice(i,1);const c=getCFG();await putBin(c.photosId,photos);renderGallery();renderManage();}
+async function delPhoto(i){
+  if(!confirm('Remove this photo?'))return;
+  var cfg=getLCFG();
+  photos.photos.splice(i,1);
+  await putBin(cfg.photosId,photos);renderGallery();renderManage();
+}
 function openLB(url){document.getElementById('lb-img').src=url;document.getElementById('lb').classList.add('open');}
 function closeLB(){document.getElementById('lb').classList.remove('open');}
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  LOG VISIT
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-async function logVisit(){
-  const c=getCFG();if(!c.analyticsId)return;
+// ── LOG VISIT ────────────────────────────────────────────
+async function logVisit(cfg){
+  if(!cfg||!cfg.analyticsId)return;
   try{
-    let geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:'',region:''};
-    try{const r=await fetch('https://ipapi.co/json/');geo=await r.json();}catch(e){}
-    const v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',cc:geo.country_code||'XX',isp:geo.org||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct'};
-    const cur=await getBin(c.analyticsId);const vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;
-    await putBin(c.analyticsId,{visits:vs});
+    var geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:''};
+    try{var r=await fetch('https://ipapi.co/json/');geo=await r.json();}catch(e){}
+    var v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',cc:geo.country_code||'XX',isp:geo.org||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct'};
+    var cur=await getBin(cfg.analyticsId);var vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;
+    await putBin(cfg.analyticsId,{visits:vs});
   }catch(e){}
 }
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  DASHBOARD
-// ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── DASHBOARD ────────────────────────────────────────────
 async function loadDash(){
-  const c=getCFG();if(!c.analyticsId)return;
+  var cfg=getLCFG();if(!cfg.analyticsId)return;
   try{
-    const data=await getBin(c.analyticsId);const vs=data.visits||[];
-    const today=new Date().toDateString(),week=Date.now()-7*24*60*60*1000;
-    const td=vs.filter(v=>new Date(v.t).toDateString()===today).length;
-    const wk=vs.filter(v=>new Date(v.t)>=week).length;
-    const ct=[...new Set(vs.map(v=>v.country).filter(c=>c!=='Unknown'))].length;
-    [['st',vs.length],['sd',td],['sw',wk],['sc2',ct]].forEach(([id,n])=>{const el=document.getElementById(id);if(el)countUp(el,n);});
-    const log=document.getElementById('vlog');
+    var data=await getBin(cfg.analyticsId);var vs=data.visits||[];
+    var today=new Date().toDateString(),week=Date.now()-7*24*60*60*1000;
+    var td=vs.filter(function(v){return new Date(v.t).toDateString()===today;}).length;
+    var wk=vs.filter(function(v){return new Date(v.t)>=week;}).length;
+    var ct=[...new Set(vs.map(function(v){return v.country;}).filter(function(c){return c!=='Unknown';}))].length;
+    [['st',vs.length],['sd',td],['sw',wk],['sc2',ct]].forEach(function(x){var el=document.getElementById(x[0]);if(el)countUp(el,x[1]);});
+    var log=document.getElementById('vlog');
     if(!vs.length){log.innerHTML='<div style="text-align:center;padding:1.5rem;color:rgba(255,255,255,.2);font-size:.82rem">No visits yet.</div>';}
-    else log.innerHTML=vs.slice(0,50).map(v=>`<div class="vrow"><div><div class="vm">${flag(v.cc)} ${v.city}, ${v.country}</div><div class="vd">${v.device} Â· ${v.browser} Â· ${v.os}</div><div class="vd" style="color:rgba(255,255,255,.18)">${v.isp||''}</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:.66rem;color:rgba(255,255,255,.22)">${fd(v.t)}</div><span class="badge" style="margin-top:4px;display:inline-block">${v.device}</span></div></div>`).join('');
-    const cc={};vs.forEach(v=>{cc[v.country]=(cc[v.country]||0)+1;});
-    const sc=Object.entries(cc).sort((a,b)=>b[1]-a[1]).slice(0,5);
-    document.getElementById('vcountries').innerHTML=sc.length?sc.map(([c2,n])=>`<div class="vrow"><span style="font-size:.8rem;color:rgba(255,255,255,.68)">${c2}</span><span class="badge">${n}</span></div>`).join(''):'<div style="color:rgba(255,255,255,.2);padding:.75rem;font-size:.8rem">â</div>';
-    const dc={};vs.forEach(v=>{dc[v.device]=(dc[v.device]||0)+1;});
-    document.getElementById('vdevices').innerHTML=Object.entries(dc).map(([d,n])=>`<div class="vrow"><span style="font-size:.8rem;color:rgba(255,255,255,.68)">${d}</span><span class="badge">${n}</span></div>`).join('')||'<div style="color:rgba(255,255,255,.2);padding:.75rem;font-size:.8rem">â</div>';
+    else log.innerHTML=vs.slice(0,50).map(function(v){return '<div class="vrow"><div><div class="vm">'+flag(v.cc)+' '+v.city+', '+v.country+'</div><div class="vd">'+v.device+' &middot; '+v.browser+' &middot; '+v.os+'</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:.66rem;color:rgba(255,255,255,.22)">'+fd(v.t)+'</div><span class="badge" style="margin-top:4px;display:inline-block">'+v.device+'</span></div></div>';}).join('');
+    var cc={};vs.forEach(function(v){cc[v.country]=(cc[v.country]||0)+1;});
+    var sc=Object.entries(cc).sort(function(a,b){return b[1]-a[1];}).slice(0,5);
+    document.getElementById('vcountries').innerHTML=sc.length?sc.map(function(x){return '<div class="vrow"><span style="font-size:.8rem;color:rgba(255,255,255,.68)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join(''):'<div style="color:rgba(255,255,255,.2);padding:.75rem;font-size:.8rem">-</div>';
+    var dc={};vs.forEach(function(v){dc[v.device]=(dc[v.device]||0)+1;});
+    document.getElementById('vdevices').innerHTML=Object.entries(dc).map(function(x){return '<div class="vrow"><span style="font-size:.8rem;color:rgba(255,255,255,.68)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join('')||'<div style="color:rgba(255,255,255,.2);padding:.75rem;font-size:.8rem">-</div>';
   }catch(e){}
 }
-async function clearLogs(){if(!confirm('Delete all visitor logs?'))return;const c=getCFG();await putBin(c.analyticsId,{visits:[]});loadDash();}
+async function clearLogs(){if(!confirm('Delete all visitor logs?'))return;var cfg=getLCFG();await putBin(cfg.analyticsId,{visits:[]});loadDash();}
 
-// ââââââââââââââââââââââââââââââââââââââââââââââ
-//  UTILS
-// ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── UTILS ────────────────────────────────────────────────
 function go(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.ntab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.ntab').forEach(function(t){t.classList.remove('active');});
   document.getElementById(id).classList.add('active');
-  const map={'pbio':0,'pphoto':1,'pedit':2,'pdash':3};
-  const tabs=document.querySelectorAll('.ntab');
-  const i=map[id];if(i!==undefined)tabs[i]?.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});setTimeout(initReveal,50);
+  var map={pbio:0,pphoto:1,pedit:2,pdash:3};
+  var tabs=document.querySelectorAll('.ntab');
+  if(map[id]!==undefined)tabs[map[id]]&&tabs[map[id]].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(initReveal,50);
 }
-function showAl(el,msg,type){el.textContent=msg;el.className='al '+type;if(type!=='inf')setTimeout(()=>{el.className='al';el.textContent='';},6000);}
+function showAl(el,msg,type){el.textContent=msg;el.className='al '+type;if(type!=='inf')setTimeout(function(){el.className='al';el.textContent='';},6000);}
 function cpLink(id){
-  const txt=document.getElementById(id).textContent;
-  navigator.clipboard?.writeText(txt).then(()=>alert('Copied!')).catch(()=>{try{const r=document.createRange();r.selectNode(document.getElementById(id));window.getSelection().removeAllRanges();window.getSelection().addRange(r);document.execCommand('copy');alert('Copied!');}catch(e){}});
+  var txt=document.getElementById(id).textContent;
+  if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){alert('Copied!');});}
+  else{try{var r=document.createRange();r.selectNode(document.getElementById(id));window.getSelection().removeAllRanges();window.getSelection().addRange(r);document.execCommand('copy');alert('Copied!');}catch(e){}}
 }
-function g(id){const el=document.getElementById(id);return el?el.value.trim():'';}
-function s(id,html){const el=document.getElementById(id);if(el)el.innerHTML=html||'';}
-function sv(id,val){const el=document.getElementById(id);if(el&&val!=null&&val!=='')el.value=val;}
-function flag(cc){if(!cc||cc.length!==2)return 'ð';try{return cc.toUpperCase().replace(/./g,c=>String.fromCodePoint(0x1F1E0-65+c.charCodeAt(0)));}catch(e){return 'ð';}}
+function g(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+function s(id,html){var el=document.getElementById(id);if(el)el.innerHTML=html||'';}
+function sv(id,val){var el=document.getElementById(id);if(el&&val!=null&&val!=='')el.value=val;}
+function flag(cc){if(!cc||cc.length!==2)return '&#127758;';try{return cc.toUpperCase().replace(/./g,function(c){return String.fromCodePoint(0x1F1E0-65+c.charCodeAt(0));});}catch(e){return '&#127758;';}}
 function fd(iso){try{return new Date(iso).toLocaleString('en-GB',{day:'2-digit',month:'short',year:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return iso;}}
-function getBr(){const u=navigator.userAgent;if(u.includes('Chrome')&&!u.includes('Edg'))return 'Chrome';if(u.includes('Firefox'))return 'Firefox';if(u.includes('Safari')&&!u.includes('Chrome'))return 'Safari';if(u.includes('Edg'))return 'Edge';return 'Browser';}
-function getOS(){const u=navigator.userAgent;if(u.includes('Windows'))return 'Windows';if(u.includes('Mac'))return 'macOS';if(u.includes('Android'))return 'Android';if(u.includes('iPhone')||u.includes('iPad'))return 'iOS';if(u.includes('Linux'))return 'Linux';return 'Other';}
+function getBr(){var u=navigator.userAgent;if(u.indexOf('Chrome')>-1&&u.indexOf('Edg')===-1)return 'Chrome';if(u.indexOf('Firefox')>-1)return 'Firefox';if(u.indexOf('Safari')>-1&&u.indexOf('Chrome')===-1)return 'Safari';if(u.indexOf('Edg')>-1)return 'Edge';return 'Browser';}
+function getOS(){var u=navigator.userAgent;if(u.indexOf('Windows')>-1)return 'Windows';if(u.indexOf('Mac')>-1)return 'macOS';if(u.indexOf('Android')>-1)return 'Android';if(u.indexOf('iPhone')>-1||u.indexOf('iPad')>-1)return 'iOS';if(u.indexOf('Linux')>-1)return 'Linux';return 'Other';}
 </script>
 </body>
 </html>
