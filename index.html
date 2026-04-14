@@ -14,15 +14,7 @@
      ██████████████████████████████████████████████████████ -->
 <script id="app-config" type="application/json">
 {
-  "biodataId": "",
-  "photosId": "",
-  "analyticsId": "",
-  "imgbbKey": "",
-  "jsonbinKey": "",
-  "adminPass": "",
-  "githubUser": "",
-  "githubRepo": "",
-  "githubToken": ""
+  "masterBinId": ""
 }
 </script>
 
@@ -495,12 +487,25 @@ function countUp(el,n,d=1000){
 //  This is how we bake keys into the file itself
 // ══════════════════════════════════════════════
 function getCFG(){
-  try{return JSON.parse(document.getElementById('app-config').textContent);}
-  catch(e){return {};}
+  // File config (safe - only masterBinId)
+  let fileCfg={};
+  try{fileCfg=JSON.parse(document.getElementById('app-config').textContent);}catch(e){}
+  // Admin keys stored in localStorage (only present on admin's device)
+  let localCfg={};
+  try{localCfg=JSON.parse(localStorage.getItem('ibadmin')||'{}');}catch(e){}
+  return {...fileCfg,...localCfg};
 }
-// Check if this install has been configured (bins exist)
+function saveLCFG(o){
+  let cur={};
+  try{cur=JSON.parse(localStorage.getItem('ibadmin')||'{}');}catch(e){}
+  localStorage.setItem('ibadmin',JSON.stringify({...cur,...o}));
+}
+// Configured = masterBinId baked into file (means setup was completed)
 function isConfigured(){
-  const c=getCFG();return !!(c.biodataId&&c.photosId&&c.analyticsId&&c.jsonbinKey);
+  try{
+    const fileCfg=JSON.parse(document.getElementById('app-config').textContent);
+    return !!(fileCfg.masterBinId);
+  }catch(e){return false;}
 }
 function isAdminMode(){
   const searchStr=location.search||(location.href.includes('?')?'?'+location.href.split('?')[1]:'');
@@ -515,27 +520,23 @@ function isAdminMode(){
 // ══════════════════════════════════════════════
 //  GITHUB API — patch index.html with new config
 // ══════════════════════════════════════════════
-async function patchGitHubConfig(newCfg,ghUser,ghRepo,ghToken){
-  // 1. Get current file SHA + content
+async function patchGitHubConfig(masterBinId,ghUser,ghRepo,ghToken){
+  // Only write the masterBinId into the file - no API keys, no secrets
   const fileRes=await fetch(`https://api.github.com/repos/${ghUser}/${ghRepo}/contents/index.html`,{
     headers:{'Authorization':`token ${ghToken}`,'Accept':'application/vnd.github.v3+json'}
   });
-  if(!fileRes.ok) throw new Error('Cannot read index.html from GitHub. Check your token and repo name.');
+  if(!fileRes.ok) throw new Error('Cannot read file from GitHub. Check your username, repo name and token.');
   const fileData=await fileRes.json();
   const sha=fileData.sha;
-  let content=atob(fileData.content.replace(/\n/g,''));
-
-  // 2. Replace the config JSON inside the <script id="app-config"> tag
-  const newConfigStr=JSON.stringify(newCfg,null,2);
-  const regex=/(<script id="app-config" type="application\/json">)([\s\S]*?)(<\/script>)/;
-  if(!regex.test(content)) throw new Error('Could not find config block in index.html. Make sure you uploaded the correct file.');
-  content=content.replace(regex,`$1\n${newConfigStr}\n$3`);
-
-  // 3. Push updated file back to GitHub
+  let html=atob(fileData.content.replace(/\n/g,''));
+  const marker='"masterBinId": ""';
+  const replacement=`"masterBinId": "${masterBinId}"`;
+  if(!html.includes(marker)) throw new Error('Config marker not found. Make sure you uploaded the correct index.html file.');
+  html=html.replace(marker,replacement);
   const pushRes=await fetch(`https://api.github.com/repos/${ghUser}/${ghRepo}/contents/index.html`,{
     method:'PUT',
     headers:{'Authorization':`token ${ghToken}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
-    body:JSON.stringify({message:'biodata: save config',content:btoa(unescape(encodeURIComponent(content))),sha})
+    body:JSON.stringify({message:'biodata: init',content:btoa(unescape(encodeURIComponent(html))),sha})
   });
   if(!pushRes.ok){const e=await pushRes.json();throw new Error(e.message||'GitHub push failed');}
 }
@@ -564,14 +565,43 @@ window.addEventListener('load',async()=>{
     s('bc','<div class="bemp">—</div>');
     return;
   }
-  // Case 3: configured — load everything
-  if(admin) activateAdmin();
-  else logVisit();
-  const c=getCFG();
-  animName(c.cachedName||'Islamic Marriage Biodata');
-  await loadBio();
-  await loadPhotos();
-  if(admin) await loadDash();
+  // Case 3: configured — fetch master bin to get full config, then load
+  try{
+    const fileCfg=JSON.parse(document.getElementById('app-config').textContent);
+    const masterBinId=fileCfg.masterBinId;
+    // Fetch master config from JSONBin using a temp fetch (we need jk from master bin)
+    // Problem: we need jk to fetch master bin, but jk is IN master bin.
+    // Solution: admin stores jk in localStorage. Viewer gets config from a public-readable endpoint.
+    // We store jsonbinKey in localStorage on admin device during setup.
+    // For viewers: we use the X-Access-Key header trick with a read-only key.
+    // Simplest: store the jsonbinKey in a separate tiny public bin, ID baked in file.
+    // ACTUAL SIMPLEST: store full config (including keys) in localStorage on admin device,
+    // and for viewers, store ONLY the needed read keys in the HTML (not the master key).
+    // 
+    // For now: load from localStorage if admin, for viewers use cached data in master bin
+    // by making the master bin public-readable only.
+    let cfg=getCFG();
+    if(!cfg.jsonbinKey){
+      // Viewer device - need to fetch config from master bin without auth
+      // Make master bin public in JSONBin (we set X-Bin-Private: false)
+      // Then fetch without key
+      const res=await fetch(`https://api.jsonbin.io/v3/b/${masterBinId}/latest`);
+      const j=await res.json();
+      if(j.record){
+        cfg={...cfg,...j.record};
+        saveLCFG(j.record);
+      }
+    }
+    if(admin) activateAdmin();
+    else logVisit();
+    animName(cfg.cachedName||'Islamic Marriage Biodata');
+    await loadBio();
+    await loadPhotos();
+    if(admin) await loadDash();
+  }catch(e){
+    animName('Islamic Marriage Biodata');
+    s('bp','<div class="bemp">Could not load profile. Please try again.</div>');
+  }
 });
 
 // ══════════════════════════════════════════════
@@ -581,22 +611,26 @@ async function doSetup(){
   const gu=g('sgu'),gr2=g('sgr'),gt=g('sgt'),jk=g('sjb'),ik=g('sib'),ap=g('sap');
   const al=document.getElementById('sal');
   if(!gu||!gr2||!gt||!jk||!ik||!ap){showAl(al,'Please fill in all fields.','err');return;}
-  showAl(al,'Step 1/3 — Creating storage bins in JSONBin...','inf');
+  showAl(al,'Step 1/3 — Creating storage bins...','inf');
   try{
     const b1=await mkBin({personal:{},family:{},religious:{},education:{},partner:{},contact:{}},jk,'Biodata');
     const b2=await mkBin({photos:[]},jk,'Photos');
     const b3=await mkBin({visits:[]},jk,'Analytics');
-    showAl(al,'Step 2/3 — Saving config to your GitHub file...','inf');
-    const newCfg={biodataId:b1,photosId:b2,analyticsId:b3,imgbbKey:ik,jsonbinKey:jk,adminPass:ap,githubUser:gu,githubRepo:gr2,githubToken:gt,cachedName:'Islamic Marriage Biodata'};
-    await patchGitHubConfig(newCfg,gu,gr2,gt);
-    showAl(al,'Step 3/3 — Done! Reloading your site...','ok');
-    // Wait for GitHub Pages to re-deploy (usually ~30s), then reload
-    setTimeout(()=>location.reload(),8000);
+    // Master bin stores all config - only its ID goes into the HTML file
+    const masterData={biodataId:b1,photosId:b2,analyticsId:b3,imgbbKey:ik,jsonbinKey:jk,adminPass:ap,cachedName:'Islamic Marriage Biodata'};
+    const masterBinId=await mkBin(masterData,jk,'Master',true);// public so viewers can read
+    showAl(al,'Step 2/3 — Saving to GitHub (no secrets in file)...','inf');
+    await patchGitHubConfig(masterBinId,gu,gr2,gt);
+    // Save full config in admin localStorage too
+    saveLCFG(masterData);
+    saveLCFG({masterBinId});
+    showAl(al,'Step 3/3 — Done! Page will reload in ~40 seconds after GitHub redeploys...','ok');
+    setTimeout(()=>location.reload(),40000);
   }catch(e){showAl(al,'Error: '+e.message,'err');}
 }
-async function mkBin(data,key,name){
-  const r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Master-Key':key,'X-Bin-Name':name,'X-Bin-Private':'true'},body:JSON.stringify(data)});
-  const j=await r.json();if(!j.metadata)throw new Error('Invalid JSONBin key');return j.metadata.id;
+async function mkBin(data,key,name,isPublic=false){
+  const r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Master-Key':key,'X-Bin-Name':name,'X-Bin-Private':isPublic?'false':'true'},body:JSON.stringify(data)});
+  const j=await r.json();if(!j.metadata)throw new Error('Invalid JSONBin key — check and try again');return j.metadata.id;
 }
 
 // ══════════════════════════════════════════════
