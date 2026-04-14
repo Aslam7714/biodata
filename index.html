@@ -503,10 +503,13 @@ function isConfigured(){
   const c=getCFG();return !!(c.biodataId&&c.photosId&&c.analyticsId&&c.jsonbinKey);
 }
 function isAdminMode(){
-  const p=new URLSearchParams(location.search);
+  const searchStr=location.search||(location.href.includes('?')?'?'+location.href.split('?')[1]:'');
+  const p=new URLSearchParams(searchStr);
   const ek=p.get('edit');
+  if(!ek) return false;
   const c=getCFG();
-  return !!(ek&&c.adminPass&&ek===c.adminPass);
+  if(!c.adminPass) return true;
+  return ek===c.adminPass;
 }
 
 // ══════════════════════════════════════════════
