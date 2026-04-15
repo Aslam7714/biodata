@@ -9,25 +9,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!--MASTER_BIN_ID:69de96f3856a68218933e5ab-->
+<!--MASTER_BIN_ID:-->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E6B8;--g1:#0B1E12;--g2:#162E1E;--g3:#1F4028;--r:14px;--rs:10px;--sb:env(safe-area-inset-bottom,0px)}
 html{-webkit-text-size-adjust:100%}
 body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:100vh;overflow-x:hidden;overscroll-behavior:none}
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
-#loader{position:fixed;inset:0;background:var(--g1);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s,visibility .6s}
+#loader{position:fixed;inset:0;background:var(--g1);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s,visibility .5s}
 #loader.out{opacity:0;visibility:hidden;pointer-events:none}
-.ld-outer{position:relative;width:68px;height:68px;margin-bottom:1.1rem}
+.ld-outer{position:relative;width:64px;height:64px;margin-bottom:1rem}
 .ld-ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(201,168,76,.1);border-top-color:var(--gold);animation:spin 1.1s linear infinite}
-.ld-ring2{position:absolute;inset:9px;border-radius:50%;border:1px solid rgba(201,168,76,.07);border-bottom-color:var(--gold2);animation:spin 1.8s linear infinite reverse}
+.ld-ring2{position:absolute;inset:9px;border-radius:50%;border:1px solid rgba(201,168,76,.06);border-bottom-color:var(--gold2);animation:spin 1.8s linear infinite reverse}
 .ld-ic{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.ld-dots{display:flex;gap:5px;margin-top:.9rem}
+.ld-dots{display:flex;gap:5px;margin-top:.8rem}
 .ld-d{width:4px;height:4px;border-radius:50%;background:var(--gold);animation:dp 1.4s ease-in-out infinite}
 .ld-d:nth-child(2){animation-delay:.18s}.ld-d:nth-child(3){animation-delay:.36s}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes dp{0%,80%,100%{transform:scale(.4);opacity:.2}40%{transform:scale(1);opacity:1}}
-#app{position:relative;z-index:1;opacity:0;transition:opacity .6s}
+#app{position:relative;z-index:1;opacity:0;transition:opacity .5s}
 #app.show{opacity:1}
 .ebar{background:rgba(9,22,13,.98);border-bottom:1px solid rgba(201,168,76,.15);padding:.45rem .9rem;font-size:.72rem;color:var(--gold3);display:flex;align-items:center;justify-content:space-between;gap:8px;position:sticky;top:0;z-index:300}
 .epill{background:var(--gold);color:var(--g1);padding:1px 7px;border-radius:20px;font-size:.6rem;font-weight:800}
@@ -58,20 +58,18 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .hname .ch{display:inline-block;opacity:0;transform:translateY(26px);animation:chin .45s ease both}
 .hname .sp{display:inline-block;width:.28em}
 .hsub{font-size:.66rem;color:rgba(255,255,255,.28);letter-spacing:3px;text-transform:uppercase;opacity:0;animation:up .8s ease 2.4s forwards;margin-top:.35rem;margin-bottom:2.4rem}
-.scue{display:flex;flex-direction:column;align-items:center;gap:5px;opacity:0;animation:up .8s ease 2.8s forwards;cursor:pointer}
-.scue-t{font-size:.6rem;color:rgba(245,230,184,.36);letter-spacing:3px;text-transform:uppercase}
-.sa{width:14px;height:14px;border-right:1.5px solid rgba(201,168,76,.55);border-bottom:1.5px solid rgba(201,168,76,.55);transform:rotate(45deg);animation:bou 1.8s ease-in-out infinite;margin-top:2px}
-.sa2{width:9px;height:9px;border-right:1px solid rgba(201,168,76,.28);border-bottom:1px solid rgba(201,168,76,.28);transform:rotate(45deg);margin-top:-7px;animation:bou 1.8s ease-in-out .18s infinite}
-@keyframes bou{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(4px)}}
 @keyframes up{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 @keyframes chin{to{opacity:1;transform:translateY(0)}}
+/* NAV — bigger tabs */
 .nav{background:rgba(8,20,12,.97);border-top:1px solid rgba(201,168,76,.09);display:flex;position:sticky;bottom:0;z-index:200;padding-bottom:var(--sb);overflow-x:auto;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
 @media(min-width:640px){.nav{top:0;bottom:auto;border-top:none;border-bottom:1px solid rgba(201,168,76,.09)}}
-.ntab{flex:0 0 auto;padding:.78rem 1.2rem;text-align:center;font-size:.64rem;font-weight:700;color:rgba(255,255,255,.26);cursor:pointer;border-top:2px solid transparent;transition:all .2s;letter-spacing:.6px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:4px;user-select:none}
-.ntab svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
-.ntab.active{color:var(--gold);border-top-color:var(--gold)}
+.ntab{flex:1;min-width:0;padding:.95rem .5rem .75rem;text-align:center;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.28);cursor:pointer;border-top:2px solid transparent;transition:all .22s;letter-spacing:.5px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:5px;user-select:none}
+.ntab svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+.ntab.active{color:var(--gold);border-top-color:var(--gold);background:rgba(201,168,76,.04)}
 .ntab:active{opacity:.55}
+/* active tab glow indicator */
+.ntab.active svg{filter:drop-shadow(0 0 4px rgba(201,168,76,.4))}
 .pw{overflow:hidden}
 .pi{display:flex;transition:transform .36s cubic-bezier(.4,0,.2,1);will-change:transform;align-items:flex-start}
 .page{flex:0 0 100vw;width:100vw;padding:1.2rem .85rem 3.5rem}
@@ -94,14 +92,23 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .bval{font-size:.84rem;color:rgba(255,255,255,.76);line-height:1.5;flex:1}
 .bdsc{margin-top:.55rem;padding:.7rem .85rem;background:rgba(201,168,76,.03);border-left:2px solid rgba(201,168,76,.18);border-radius:0 7px 7px 0;font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.75;font-style:italic}
 .bemp{color:rgba(255,255,255,.16);font-size:.8rem;text-align:center;padding:.5rem}
+/* photos swipe hint */
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:.5rem}
 @media(min-width:380px){.pgrid{grid-template-columns:repeat(3,1fr)}}
 .pitem{aspect-ratio:1;border-radius:8px;overflow:hidden;border:1px solid rgba(201,168,76,.08);cursor:pointer}
 .pitem img{width:100%;height:100%;object-fit:cover;display:block}
 .pitem:active{opacity:.82}
 .pemp{text-align:center;padding:2.5rem 1rem;color:rgba(255,255,255,.18);font-size:.8rem}
-.sh{display:flex;align-items:center;justify-content:center;gap:6px;font-size:.6rem;color:rgba(201,168,76,.38);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.65rem}
-.sh::before,.sh::after{content:"";flex:1;height:1px;background:rgba(201,168,76,.13)}
+/* SWIPE HAND ANIMATION */
+.swipe-anim{display:flex;flex-direction:column;align-items:center;gap:6px;padding:.75rem 0 1rem;opacity:0;animation:fadein .5s ease 1s forwards}
+@keyframes fadein{to{opacity:1}}
+.swipe-hand{font-size:1.5rem;animation:swipehand 2s ease-in-out infinite;display:inline-block}
+@keyframes swipehand{0%{transform:translateX(0)}30%{transform:translateX(18px)}60%{transform:translateX(-6px)}100%{transform:translateX(0)}}
+.swipe-text{font-size:.6rem;color:rgba(201,168,76,.45);letter-spacing:2px;text-transform:uppercase}
+.swipe-arrows{display:flex;align-items:center;gap:3px;margin-top:2px}
+.swa{width:16px;height:1px;background:rgba(201,168,76,.3);position:relative}
+.swa::after{content:'';position:absolute;right:-4px;top:-3px;border-left:5px solid rgba(201,168,76,.4);border-top:3px solid transparent;border-bottom:3px solid transparent}
+/* lightbox */
 #lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:9000;flex-direction:column;align-items:center;justify-content:center}
 #lb.open{display:flex}
 .lbw{position:relative;width:100%;flex:1;display:flex;align-items:center;justify-content:center}
@@ -218,10 +225,6 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
     <div class="hlabel">Bio Data</div>
     <div class="hname" id="hname">&nbsp;</div>
     <div class="hsub">Islamic Marriage Profile</div>
-    <div class="scue" onclick="document.getElementById('mainnav').scrollIntoView({behavior:'smooth'})">
-      <span class="scue-t">View Profile</span>
-      <div><div class="sa"></div><div class="sa2"></div></div>
-    </div>
   </section>
   <nav class="nav" id="mainnav">
     <div class="ntab active" id="tab0" onclick="go(0)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Biodata</div>
@@ -235,12 +238,20 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
       <div class="reveal" style="transition-delay:.06s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="ct">Personal</div></div><div id="bp"><div class="bemp">Loading...</div></div></div></div>
       <div class="reveal" style="transition-delay:.1s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ct">Family</div></div><div id="bf"><div class="bemp">Loading...</div></div></div></div>
       <div class="reveal" style="transition-delay:.14s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg></div><div class="ct">Education &amp; Career</div></div><div id="be"><div class="bemp">Loading...</div></div></div></div>
-      <div class="reveal" style="transition-delay:.18s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.69 19a19.5 19.5 0 0 1-6-6 2 2 0 0 1 .12-1.08l1.3-2.22A2 2 0 0 0 9.07 7H6a2 2 0 0 0-2 1.72A12 12 0 0 0 4 10a16 16 0 0 0 10 10 2 2 0 0 0 1.72-2z"/></svg></div><div class="ct">Contact</div></div><div id="bc"><div class="bemp">Loading...</div></div></div></div>
+      <div class="reveal" style="transition-delay:.18s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 7.81 2 2 0 0 1 5.07 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 11.09A16 16 0 0 0 15.91 17.09l.46-.46a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="ct">Contact</div></div><div id="bc"><div class="bemp">Loading...</div></div></div></div>
       <div class="orn">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
       <p style="text-align:center;font-size:.64rem;color:rgba(255,255,255,.14);padding-bottom:.5rem;letter-spacing:1px">May Allah bless this union with love, peace and barakah</p>
     </div></div>
     <div class="page" id="p1"><div class="pg">
-      <div class="reveal"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="ct">Photos</div></div><div class="sh">tap to browse</div><div class="pgrid" id="pgallery"><div class="pemp">No photos added yet.</div></div></div></div>
+      <div class="reveal"><div class="card">
+        <div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="ct">Photos</div></div>
+        <div class="swipe-anim">
+          <div class="swipe-hand">&#128072;</div>
+          <div class="swipe-arrows"><div class="swa"></div><div class="swa"></div><div class="swa"></div></div>
+          <div class="swipe-text">Swipe photo to browse</div>
+        </div>
+        <div class="pgrid" id="pgallery"><div class="pemp">No photos added yet.</div></div>
+      </div></div>
     </div></div>
     <div class="page" id="p2"><div class="pg">
       <div id="eal" class="al"></div>
@@ -260,10 +271,7 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
         <div class="fg"><label class="fl">Father's Occupation</label><input class="fi" id="ffao" placeholder="e.g. Engineer, Businessman"></div>
         <div class="fg"><label class="fl">Mother's Name</label><input class="fi" id="fmon" placeholder="Mother's full name"></div>
         <div class="fg"><label class="fl">Mother's Occupation</label><input class="fi" id="fmoo" placeholder="e.g. Homemaker, Teacher"></div>
-        <div class="fg">
-          <label class="fl">Number of Siblings</label>
-          <div style="display:flex;align-items:center;gap:8px"><input class="fi" id="fsibcount" type="number" min="0" max="10" placeholder="0" inputmode="numeric" style="width:78px;flex-shrink:0" oninput="buildSibs()"><span style="font-size:.75rem;color:rgba(255,255,255,.28)">siblings</span></div>
-        </div>
+        <div class="fg"><label class="fl">Number of Siblings</label><div style="display:flex;align-items:center;gap:8px"><input class="fi" id="fsibcount" type="number" min="0" max="10" placeholder="0" inputmode="numeric" style="width:78px;flex-shrink:0" oninput="buildSibs()"><span style="font-size:.75rem;color:rgba(255,255,255,.28)">siblings</span></div></div>
         <div id="sib-fields"></div>
       </div>
       <div class="card reveal" style="transition-delay:.1s">
@@ -272,7 +280,7 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
         <div class="fg"><label class="fl">Occupation</label><input class="fi" id="fjb" placeholder="Doctor, Teacher, Engineer..."></div>
       </div>
       <div class="card reveal" style="transition-delay:.13s">
-        <div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.69 19a19.5 19.5 0 0 1-6-6 2 2 0 0 1 .12-1.08l1.3-2.22A2 2 0 0 0 9.07 7H6a2 2 0 0 0-2 1.72A12 12 0 0 0 4 10a16 16 0 0 0 10 10 2 2 0 0 0 1.72-2z"/></svg></div><div class="ct">Contact</div></div>
+        <div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 7.81 2 2 0 0 1 5.07 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 11.09A16 16 0 0 0 15.91 17.09l.46-.46a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="ct">Contact</div></div>
         <p style="font-size:.7rem;color:rgba(255,255,255,.26);margin-bottom:.78rem">Use a wali / family member's contact for Islamic etiquette.</p>
         <div class="frow"><div class="fg"><label class="fl">Contact Name</label><input class="fi" id="fcn" placeholder="e.g. Brother Ahmad"></div><div class="fg"><label class="fl">Relationship</label><input class="fi" id="fcr" placeholder="Father, Brother..."></div></div>
         <div class="frow"><div class="fg"><label class="fl">WhatsApp / Phone</label><input class="fi" id="fph" type="tel" placeholder="+971..." inputmode="tel"></div><div class="fg"><label class="fl">Email (optional)</label><input class="fi" id="fem" type="email" placeholder="contact@email.com" inputmode="email"></div></div>
@@ -289,16 +297,8 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
       </div>
     </div></div>
     <div class="page" id="p3"><div class="pg">
-      <div class="sgrid reveal">
-        <div class="sc"><div class="sn" id="st">-</div><div class="sl">Total Views</div></div>
-        <div class="sc"><div class="sn" id="sd">-</div><div class="sl">Today</div></div>
-        <div class="sc"><div class="sn" id="sw">-</div><div class="sl">This Week</div></div>
-        <div class="sc"><div class="sn" id="sc2">-</div><div class="sl">Countries</div></div>
-      </div>
-      <div class="sgrid reveal" style="transition-delay:.05s">
-        <div class="sc"><div class="sn" id="sdev">-</div><div class="sl">Unique Devices</div></div>
-        <div class="sc"><div class="sn" id="srv">-</div><div class="sl">Return Visits</div></div>
-      </div>
+      <div class="sgrid reveal"><div class="sc"><div class="sn" id="st">-</div><div class="sl">Total Views</div></div><div class="sc"><div class="sn" id="sd">-</div><div class="sl">Today</div></div><div class="sc"><div class="sn" id="sw">-</div><div class="sl">This Week</div></div><div class="sc"><div class="sn" id="sc2">-</div><div class="sl">Countries</div></div></div>
+      <div class="sgrid reveal" style="transition-delay:.05s"><div class="sc"><div class="sn" id="sdev">-</div><div class="sl">Unique Devices</div></div><div class="sc"><div class="sn" id="srv">-</div><div class="sl">Return Visits</div></div></div>
       <div class="card reveal" style="transition-delay:.09s"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="ct">Visitor Log</div><button class="btn btn-ghost btn-sm" style="margin-left:auto" onclick="loadDash()">&#8635;</button></div><div id="vlog"><div style="text-align:center;padding:1.5rem;color:rgba(255,255,255,.17);font-size:.78rem">Loading...</div></div></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem">
         <div class="card reveal" style="transition-delay:.13s"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="ct" style="font-size:.88rem">Countries</div></div><div id="vcountries"></div></div>
@@ -349,52 +349,146 @@ function animName(text){
   Array.from(text).forEach(function(c){if(c===' '){var sp=document.createElement('span');sp.className='sp';el.appendChild(sp);delay+=.022;return;}var sp=document.createElement('span');sp.className='ch';sp.textContent=c;sp.style.animationDelay=delay+'s';el.appendChild(sp);delay+=.048;});
 }
 function countUp(el,n){var t=performance.now();(function f(now){var p=Math.min((now-t)/750,1);el.textContent=Math.round(p*p*n);if(p<1)requestAnimationFrame(f);else el.textContent=n;})(t);}
+// ── CACHE HELPERS ──────────────────────────────────────────────────────────
+function saveCache(key,data){try{localStorage.setItem(key,JSON.stringify({v:data,t:Date.now()}));}catch(e){}}
+function getCache(key,maxAge){try{var c=JSON.parse(localStorage.getItem(key)||'null');if(!c)return null;if(maxAge&&Date.now()-c.t>maxAge)return null;return c.v;}catch(e){return null;}}
+// ── LOADER ─────────────────────────────────────────────────────────────────
+function hideLoader(){var ld=document.getElementById('loader');if(!ld.classList.contains('out')){ld.classList.add('out');document.getElementById('app').classList.add('show');initReveal();}}
+// Auto-scroll to nav (past hero) once data is shown
+var scrolled=false;
+function autoScroll(){
+  if(scrolled)return;scrolled=true;
+  var nav=document.getElementById('mainnav');
+  if(nav)setTimeout(function(){nav.scrollIntoView({behavior:'smooth',block:'start'});},400);
+}
+// ── PAGE SWIPE (no scroll to top) ──────────────────────────────────────────
 var curPage=0,pageCount=2,isAdmin=false;
 var pi=document.getElementById('pi');
 var sx=0,sy2=0,dx=0,movd=false,horiz=false;
 function go(idx,ns){
   curPage=idx;pi.style.transform='translateX(-'+(idx*100)+'vw)';
   document.querySelectorAll('.ntab').forEach(function(t,i){t.classList.toggle('active',i===idx);});
-  if(!ns){var nav=document.getElementById('mainnav');var r=nav.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight)nav.scrollIntoView({behavior:'smooth',block:'nearest'});}
+  if(!ns){
+    var nav=document.getElementById('mainnav');
+    var r=nav.getBoundingClientRect();
+    if(r.top<0||r.top>window.innerHeight*1.5)nav.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
   setTimeout(initReveal,55);if(idx===3)loadDash();
 }
 var pw=document.getElementById('pw');
 pw.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy2=e.touches[0].clientY;movd=false;horiz=false;dx=0;},{passive:true});
 pw.addEventListener('touchmove',function(e){dx=e.touches[0].clientX-sx;var dy=e.touches[0].clientY-sy2;if(!movd){movd=true;horiz=Math.abs(dx)>Math.abs(dy);}},{passive:true});
 pw.addEventListener('touchend',function(){if(horiz&&Math.abs(dx)>42){if(dx<0&&curPage<pageCount-1)go(curPage+1,true);else if(dx>0&&curPage>0)go(curPage-1,true);}},{passive:true});
+// ── LIGHTBOX ──────────────────────────────────────────────────────────────
 var lbP=[],lbI=0,lbsx=0;
 function openLB(i){lbP=window._photos||[];lbI=i;showLB();document.getElementById('lb').classList.add('open');var w=document.getElementById('lbw');w.ontouchstart=function(e){lbsx=e.touches[0].clientX;};w.ontouchend=function(e){var d=e.changedTouches[0].clientX-lbsx;if(Math.abs(d)>32)lbNav(d<0?1:-1);};}
 function showLB(){if(!lbP.length)return;var img=document.getElementById('lb-img');img.style.opacity='0';img.style.transform='scale(.96)';img.src=lbP[lbI].url;img.onload=function(){img.style.opacity='1';img.style.transform='scale(1)';};document.getElementById('lb-counter').textContent=(lbI+1)+' / '+lbP.length;var dots=document.getElementById('lb-dots');if(lbP.length>1){dots.innerHTML=lbP.map(function(_,i){return '<button class="lbd'+(i===lbI?' a':'')+'" onclick="lbGoTo('+i+')"></button>';}).join('');}else{dots.innerHTML='';}document.querySelector('.lbn.p').style.opacity=lbP.length>1?'1':'0';document.querySelector('.lbn.n').style.opacity=lbP.length>1?'1':'0';}
 function lbNav(d){lbI=(lbI+d+lbP.length)%lbP.length;showLB();}
 function lbGoTo(i){lbI=i;showLB();}
 function closeLB(){document.getElementById('lb').classList.remove('open');}
-function buildSibs(){
-  var count=parseInt(document.getElementById('fsibcount').value)||0;
-  var cont=document.getElementById('sib-fields');
-  var existing=[];cont.querySelectorAll('.sib-item').forEach(function(el,i){var r=el.querySelector('.sr'+i),a=el.querySelector('.sa'+i);existing[i]={rel:r?r.value:'',age:a?a.value:''};});
-  cont.innerHTML='';if(count<=0)return;
-  for(var i=0;i<count;i++){var prev=existing[i]||{rel:'',age:''};var d=document.createElement('div');d.className='sib-item';d.innerHTML='<div class="sib-lbl">Sibling '+(i+1)+'</div><div class="frow"><div class="fg"><label class="fl">Relation</label><select class="fs sr'+i+'"><option value="">Select...</option><option'+(prev.rel==='Brother'?' selected':'')+'>Brother</option><option'+(prev.rel==='Sister'?' selected':'')+'>Sister</option></select></div><div class="fg"><label class="fl">Age</label><input class="fi sa'+i+'" type="number" min="1" max="80" placeholder="Age" inputmode="numeric" value="'+prev.age+'"></div></div>';cont.appendChild(d);}
-}
+// ── SIBLINGS ──────────────────────────────────────────────────────────────
+function buildSibs(){var count=parseInt(document.getElementById('fsibcount').value)||0;var cont=document.getElementById('sib-fields');var ex=[];cont.querySelectorAll('.sib-item').forEach(function(el,i){var r=el.querySelector('.sr'+i),a=el.querySelector('.sa'+i);ex[i]={rel:r?r.value:'',age:a?a.value:''};});cont.innerHTML='';if(count<=0)return;for(var i=0;i<count;i++){var prev=ex[i]||{rel:'',age:''};var d=document.createElement('div');d.className='sib-item';d.innerHTML='<div class="sib-lbl">Sibling '+(i+1)+'</div><div class="frow"><div class="fg"><label class="fl">Relation</label><select class="fs sr'+i+'"><option value="">Select...</option><option'+(prev.rel==='Brother'?' selected':'')+'>Brother</option><option'+(prev.rel==='Sister'?' selected':'')+'>Sister</option></select></div><div class="fg"><label class="fl">Age</label><input class="fi sa'+i+'" type="number" min="1" max="80" placeholder="Age" inputmode="numeric" value="'+prev.age+'"></div></div>';cont.appendChild(d);}}
 function getSibs(){var count=parseInt(document.getElementById('fsibcount').value)||0,sibs=[];for(var i=0;i<count;i++){var r=document.querySelector('.sr'+i),a=document.querySelector('.sa'+i);sibs.push({rel:r?r.value:'',age:a?a.value:''});}return sibs;}
 function setSibs(sibs){if(!sibs||!sibs.length){document.getElementById('fsibcount').value='';return;}document.getElementById('fsibcount').value=sibs.length;buildSibs();sibs.forEach(function(s,i){var r=document.querySelector('.sr'+i),a=document.querySelector('.sa'+i);if(r)r.value=s.rel||'';if(a)a.value=s.age||'';});}
+// ── DEVICE FINGERPRINT ────────────────────────────────────────────────────
 function getDeviceId(){var d=localStorage.getItem('_did');if(d)return d;var fp=[navigator.userAgent,navigator.language,screen.width+'x'+screen.height,screen.colorDepth,new Date().getTimezoneOffset(),navigator.hardwareConcurrency||''].join('|');var h=0;for(var i=0;i<fp.length;i++){h=((h<<5)-h)+fp.charCodeAt(i);h|=0;}var id='d'+Math.abs(h).toString(36);localStorage.setItem('_did',id);return id;}
 function getVC(){var c=parseInt(localStorage.getItem('_vc')||'0');localStorage.setItem('_vc',c+1);return c+1;}
+// ── CONFIG ────────────────────────────────────────────────────────────────
 function getMID(){var m=document.documentElement.innerHTML.match(/<!--MASTER_BIN_ID:([\w]+)-->/);return m?m[1]:'';}
 function getLCFG(){try{return JSON.parse(localStorage.getItem('ibcfg')||'{}');}catch(e){return {};}}
 function saveLCFG(o){var c=getLCFG();localStorage.setItem('ibcfg',JSON.stringify(Object.assign({},c,o)));}
 function getEditKey(){var s=location.search||(location.href.indexOf('?')>-1?'?'+location.href.split('?')[1]:'');return new URLSearchParams(s).get('edit')||'';}
+// ── BOOT — CACHE FIRST ────────────────────────────────────────────────────
 window.addEventListener('load',function(){
-  setTimeout(function(){document.getElementById('loader').classList.add('out');document.getElementById('app').classList.add('show');initReveal();},1100);
   var mid=getMID(),ek=getEditKey(),lc=getLCFG();
-  if(!mid){if(ek)document.getElementById('setup').style.display='block';else{animName('');setEmpty();}return;}
+  if(!mid){
+    if(ek){document.getElementById('setup').style.display='block';hideLoader();}
+    else{animName('');setEmpty();hideLoader();}
+    return;
+  }
   var sp=lc.adminPass||'',admin=!!(ek&&sp&&ek===sp);
-  if(admin){activateAdmin();animName(lc.cachedName||'');Promise.all([loadBio(),loadPhotos()]);return;}
-  fetchAndBoot(mid,ek);
+  // CACHE FIRST: show data immediately if cached
+  var cachedBio=getCache('bio_data',86400000);
+  var cachedPhotos=getCache('photo_data',86400000);
+  if(cachedBio){
+    renderBioData(cachedBio);
+    animName(cachedBio.personal&&cachedBio.personal.name||lc.cachedName||'');
+    hideLoader();
+    if(!admin)autoScroll();
+  } else {
+    if(lc.cachedName)animName(lc.cachedName);
+  }
+  if(cachedPhotos)renderPhotosData(cachedPhotos);
+  if(admin)activateAdmin();
+  // Always fetch fresh in background
+  bootLoad(mid,ek,admin,!!cachedBio,!!cachedPhotos);
 });
-async function fetchAndBoot(mid,ek){
-  try{var res=await fetch('https://api.jsonbin.io/v3/b/'+mid+'/latest');var j=await res.json();if(!j.record)throw new Error('no record');saveLCFG(j.record);var admin=!!(ek&&j.record.adminPass&&ek===j.record.adminPass);if(admin){activateAdmin();animName(j.record.cachedName||'');Promise.all([loadBio(),loadPhotos()]);}else{animName(j.record.cachedName||'');logVisit(j.record);Promise.all([loadBio(),loadPhotos()]);}}catch(e){animName('');setEmpty();}
+async function bootLoad(mid,ek,admin,hasBio,hasPhotos){
+  var cfg=getLCFG();
+  // If no jsonbinKey, fetch master bin first
+  if(!cfg.jsonbinKey){
+    try{
+      var res=await fetch('https://api.jsonbin.io/v3/b/'+mid+'/latest');
+      var j=await res.json();
+      if(!j.record)throw new Error('no record');
+      saveLCFG(j.record);cfg=Object.assign({},getLCFG(),j.record);
+      // Re-check admin after fetching
+      if(!admin){
+        var ek2=getEditKey();
+        admin=!!(ek2&&cfg.adminPass&&ek2===cfg.adminPass);
+        if(admin)activateAdmin();
+      }
+    }catch(e){
+      if(!hasBio){animName('');setEmpty();}
+      hideLoader();return;
+    }
+  }
+  // Step 1: Fetch bio (fast, text only)
+  await loadBioFresh(cfg);
+  if(!hasBio){hideLoader();if(!admin)autoScroll();}
+  // Step 2: Fetch photos in background (after bio done)
+  loadPhotosBackground(cfg);
+  // Step 3: Log visit LAST so it doesn't slow down bio
+  if(!admin)logVisit(cfg);
+}
+async function loadBioFresh(cfg){
+  if(!cfg||!cfg.biodataId)return;
+  try{
+    var r=await fetch('https://api.jsonbin.io/v3/b/'+cfg.biodataId+'/latest',{headers:{'X-Master-Key':cfg.jsonbinKey}});
+    var j=await r.json();
+    if(j.record){saveCache('bio_data',j.record);renderBioData(j.record);if(j.record.personal&&j.record.personal.name){animName(j.record.personal.name);saveLCFG({cachedName:j.record.personal.name});}}
+  }catch(e){console.log('loadBioFresh',e);}
+}
+async function loadPhotosBackground(cfg){
+  if(!cfg||!cfg.photosId)return;
+  try{
+    var r=await fetch('https://api.jsonbin.io/v3/b/'+cfg.photosId+'/latest',{headers:{'X-Master-Key':cfg.jsonbinKey}});
+    var j=await r.json();
+    if(j.record){photos=j.record;window._photos=photos.photos||[];saveCache('photo_data',j.record);renderPhotosData(j.record);renderManage();}
+  }catch(e){console.log('loadPhotosBackground',e);}
 }
 function setEmpty(){['bp','bf','be','bc'].forEach(function(id){s(id,'<div class="bemp">No information yet.</div>');});}
+// ── RENDER FUNCTIONS (separated from fetch) ───────────────────────────────
+function renderBioData(d){
+  if(!d)return;
+  var p=d.personal||{},f=d.family||{},e=d.education||{},ct=d.contact||{};
+  s('bp',(row('Full Name',p.name)+row('Age',p.age)+row('Date of Birth',p.dob)+row('Birth Place',p.bp)+row('Current City',p.loc)+row('Marital Status',p.ms)+row('Height',p.ht)+row('Languages',p.lg)+dsc(p.ab))||emp());
+  var sh='';if(f.sibs&&f.sibs.length){sh=f.sibs.map(function(sb,i){return row('Sibling '+(i+1),(sb.rel||'')+(sb.age?' ('+sb.age+' yrs)':''));}).join('');}
+  s('bf',(row('Father',f.fan+(f.fao?' &mdash; '+f.fao:''))+row('Mother',f.mon+(f.moo?' &mdash; '+f.moo:''))+sh)||emp());
+  s('be',(row('Qualification',e.ed)+row('Field',e.fd)+row('Occupation',e.jb))||emp());
+  s('bc',(row('Contact',ct.cn+(ct.cr?' ('+ct.cr+')':''))+row('WhatsApp',ct.ph)+row('Email',ct.em))||emp());
+  sv('fn',p.name);sv('fa',p.age);sv('fdob',p.dob);sv('fbp',p.bp);sv('floc',p.loc);sv('fms',p.ms);sv('fht',p.ht);sv('flg',p.lg);sv('fab',p.ab);
+  sv('ffan',f.fan);sv('ffao',f.fao);sv('fmon',f.mon);sv('fmoo',f.moo);if(f.sibs)setSibs(f.sibs);
+  sv('fed',e.ed);sv('ffd2',e.fd);sv('fjb',e.jb);sv('fcn',ct.cn);sv('fcr',ct.cr);sv('fph',ct.ph);sv('fem',ct.em);
+}
+function renderPhotosData(d){
+  if(!d)return;
+  photos=d;window._photos=photos.photos||[];
+  renderGallery();
+  // Preload images into browser cache
+  if(photos.photos){photos.photos.forEach(function(p){if(p.url){var img=new Image();img.src=p.url;}});}
+}
+// ── SETUP ─────────────────────────────────────────────────────────────────
 async function doSetup(){
   var gu=g('sgu'),gr=g('sgr'),gt=g('sgt'),jk=g('sjb'),ik=g('sib'),ap=g('sap'),al=document.getElementById('sal');
   if(!gu||!gr||!gt||!jk||!ik||!ap){showAl(al,'Please fill in all fields.','err');return;}
@@ -426,50 +520,40 @@ async function writeGH(mid,u,r,t){
   var pr=await fetch('https://api.github.com/repos/'+u+'/'+r+'/contents/index.html',{method:'PUT',headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify({message:'biodata: setup',content:btoa(bs),sha:sha})});
   if(!pr.ok){var e2=await pr.json();throw new Error(e2.message||'GitHub push failed');}
 }
-async function mkBin(data,key,name,pub){
-  var r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Master-Key':key,'X-Bin-Name':name,'X-Bin-Private':pub?'false':'true'},body:JSON.stringify(data)});
-  var j=await r.json();if(!j.metadata)throw new Error('Invalid JSONBin key.');return j.metadata.id;
-}
+async function mkBin(data,key,name,pub){var r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Master-Key':key,'X-Bin-Name':name,'X-Bin-Private':pub?'false':'true'},body:JSON.stringify(data)});var j=await r.json();if(!j.metadata)throw new Error('Invalid JSONBin key.');return j.metadata.id;}
+// ── ADMIN ─────────────────────────────────────────────────────────────────
 function activateAdmin(){isAdmin=true;pageCount=4;document.getElementById('ebar').style.display='flex';document.getElementById('tab2').style.display='flex';document.getElementById('tab3').style.display='flex';var base=location.href.split('?')[0],pass=getLCFG().adminPass||'';s('slink',base);s('alink',base+'?edit='+pass);document.getElementById('eb-u').textContent=base.replace('https://','').substring(0,43);}
+// ── JSONBIN ───────────────────────────────────────────────────────────────
 async function getBin(id){var jk=getLCFG().jsonbinKey;var r=await fetch('https://api.jsonbin.io/v3/b/'+id+'/latest',{headers:{'X-Master-Key':jk}});return (await r.json()).record;}
 async function putBin(id,data){var jk=getLCFG().jsonbinKey;await fetch('https://api.jsonbin.io/v3/b/'+id,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':jk},body:JSON.stringify(data)});}
+// ── BIODATA SAVE ──────────────────────────────────────────────────────────
 function row(l,v){if(!v)return '';return '<div class="brow"><span class="blbl">'+l+'</span><span class="bval">'+v+'</span></div>';}
 function dsc(t){return t?'<div class="bdsc">'+t+'</div>':'';}
 function emp(){return '<div class="bemp">No information added yet.</div>';}
-async function loadBio(){
-  var cfg=getLCFG();if(!cfg.biodataId)return;
-  try{
-    var d=await getBin(cfg.biodataId);
-    var p=d.personal||{},f=d.family||{},e=d.education||{},ct=d.contact||{};
-    if(p.name){animName(p.name);saveLCFG({cachedName:p.name});}
-    s('bp',row('Full Name',p.name)+row('Age',p.age)+row('Date of Birth',p.dob)+row('Birth Place',p.bp)+row('Current City',p.loc)+row('Marital Status',p.ms)+row('Height',p.ht)+row('Languages',p.lg)+dsc(p.ab)||emp());
-    var sh='';if(f.sibs&&f.sibs.length){sh=f.sibs.map(function(sb,i){return row('Sibling '+(i+1),(sb.rel||'')+(sb.age?' ('+sb.age+' yrs)':''));}).join('');}
-    s('bf',row('Father',f.fan+(f.fao?' &mdash; '+f.fao:''))+row('Mother',f.mon+(f.moo?' &mdash; '+f.moo:''))+sh||emp());
-    s('be',row('Qualification',e.ed)+row('Field',e.fd)+row('Occupation',e.jb)||emp());
-    s('bc',row('Contact',ct.cn+(ct.cr?' ('+ct.cr+')':''))+row('WhatsApp',ct.ph)+row('Email',ct.em)||emp());
-    sv('fn',p.name);sv('fa',p.age);sv('fdob',p.dob);sv('fbp',p.bp);sv('floc',p.loc);sv('fms',p.ms);sv('fht',p.ht);sv('flg',p.lg);sv('fab',p.ab);
-    sv('ffan',f.fan);sv('ffao',f.fao);sv('fmon',f.mon);sv('fmoo',f.moo);if(f.sibs)setSibs(f.sibs);
-    sv('fed',e.ed);sv('ffd2',e.fd);sv('fjb',e.jb);sv('fcn',ct.cn);sv('fcr',ct.cr);sv('fph',ct.ph);sv('fem',ct.em);
-  }catch(e){console.log('loadBio',e);}
-}
+async function loadBio(){var cfg=getLCFG();if(!cfg.biodataId)return;try{var d=await getBin(cfg.biodataId);if(d){saveCache('bio_data',d);renderBioData(d);if(d.personal&&d.personal.name){animName(d.personal.name);saveLCFG({cachedName:d.personal.name});}}}catch(e){}}
 async function saveBio(){
   var al=document.getElementById('eal');showAl(al,'Saving...','inf');var cfg=getLCFG();
   try{
     var data={personal:{name:g('fn'),age:g('fa'),dob:g('fdob'),bp:g('fbp'),loc:g('floc'),ms:g('fms'),ht:g('fht'),lg:g('flg'),ab:g('fab')},family:{fan:g('ffan'),fao:g('ffao'),mon:g('fmon'),moo:g('fmoo'),sibs:getSibs()},education:{ed:g('fed'),fd:g('ffd2'),jb:g('fjb')},contact:{cn:g('fcn'),cr:g('fcr'),ph:g('fph'),em:g('fem')}};
     await putBin(cfg.biodataId,data);
-    if(g('fn')){saveLCFG({cachedName:g('fn')});try{var mc=await getBin(cfg.masterBinId);mc.cachedName=g('fn');await putBin(cfg.masterBinId,mc);}catch(e){}}
+    try{localStorage.removeItem('bio_data');}catch(e){}
+    if(g('fn')){saveLCFG({cachedName:g('fn')});try{var mc=await getBin(cfg.masterBinId);if(mc){mc.cachedName=g('fn');await putBin(cfg.masterBinId,mc);}}catch(e){}}
     showAl(al,'Saved! Alhamdulillah.','ok');await loadBio();
   }catch(e){showAl(al,'Error: '+e.message,'err');}
 }
+// ── PHOTOS ────────────────────────────────────────────────────────────────
 var photos={photos:[]};window._photos=[];
-async function loadPhotos(){var cfg=getLCFG();if(!cfg.photosId)return;try{photos=await getBin(cfg.photosId);window._photos=photos&&photos.photos||[];renderGallery();renderManage();}catch(e){}}
+async function loadPhotos(){var cfg=getLCFG();if(!cfg.photosId)return;try{var d=await getBin(cfg.photosId);if(d){saveCache('photo_data',d);renderPhotosData(d);renderManage();}}catch(e){}}
 function renderGallery(){var el=document.getElementById('pgallery');var arr=photos&&photos.photos||[];if(!arr.length){el.innerHTML='<div class="pemp">No photos added yet.</div>';return;}el.innerHTML=arr.map(function(p,i){return '<div class="pitem" onclick="openLB('+i+')"><img src="'+p.url+'" loading="lazy" alt="Photo '+(i+1)+'"></div>';}).join('');}
 function renderManage(){var el=document.getElementById('pmanage');if(!el)return;var arr=photos&&photos.photos||[];if(!arr.length){el.innerHTML='<p style="font-size:.73rem;color:rgba(255,255,255,.19)">No photos yet.</p>';return;}el.innerHTML=arr.map(function(p,i){return '<div class="pm-item"><img src="'+(p.thumb||p.url)+'" alt=""><div class="info">'+(p.name||'Photo '+(i+1))+'</div><button class="btn btn-danger btn-sm" onclick="delPhoto('+i+')">Remove</button></div>';}).join('');}
-async function uploadPhoto(inp){if(!inp.files[0])return;var al=document.getElementById('pal'),pr=document.getElementById('uprog'),cfg=getLCFG();if(!cfg.imgbbKey){showAl(al,'ImgBB key missing.','err');return;}pr.style.display='block';var form=new FormData();form.append('image',inp.files[0]);form.append('key',cfg.imgbbKey);try{var r=await fetch('https://api.imgbb.com/1/upload',{method:'POST',body:form});var j=await r.json();if(!j.success)throw new Error(j.error&&j.error.message||'Upload failed');if(!photos.photos)photos.photos=[];photos.photos.push({url:j.data.url,thumb:j.data.thumb&&j.data.thumb.url||j.data.url,name:inp.files[0].name,date:new Date().toISOString()});window._photos=photos.photos;await putBin(cfg.photosId,photos);showAl(al,'Photo uploaded!','ok');renderGallery();renderManage();}catch(e){showAl(al,'Error: '+e.message,'err');}finally{pr.style.display='none';inp.value='';}}
-async function delPhoto(i){if(!confirm('Remove this photo?'))return;var cfg=getLCFG();photos.photos.splice(i,1);window._photos=photos.photos;await putBin(cfg.photosId,photos);renderGallery();renderManage();}
+async function uploadPhoto(inp){if(!inp.files[0])return;var al=document.getElementById('pal'),pr=document.getElementById('uprog'),cfg=getLCFG();if(!cfg.imgbbKey){showAl(al,'ImgBB key missing.','err');return;}pr.style.display='block';var form=new FormData();form.append('image',inp.files[0]);form.append('key',cfg.imgbbKey);try{var r=await fetch('https://api.imgbb.com/1/upload',{method:'POST',body:form});var j=await r.json();if(!j.success)throw new Error(j.error&&j.error.message||'Upload failed');if(!photos.photos)photos.photos=[];photos.photos.push({url:j.data.url,thumb:j.data.thumb&&j.data.thumb.url||j.data.url,name:inp.files[0].name,date:new Date().toISOString()});window._photos=photos.photos;await putBin(cfg.photosId,photos);try{localStorage.removeItem('photo_data');}catch(e){}saveCache('photo_data',photos);showAl(al,'Photo uploaded!','ok');renderGallery();renderManage();}catch(e){showAl(al,'Error: '+e.message,'err');}finally{pr.style.display='none';inp.value='';}}
+async function delPhoto(i){if(!confirm('Remove this photo?'))return;var cfg=getLCFG();photos.photos.splice(i,1);window._photos=photos.photos;await putBin(cfg.photosId,photos);try{localStorage.removeItem('photo_data');}catch(e){}saveCache('photo_data',photos);renderGallery();renderManage();}
+// ── LOG VISIT ─────────────────────────────────────────────────────────────
 async function logVisit(cfg){if(!cfg||!cfg.analyticsId)return;try{var geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:''};try{var r=await fetch('https://ipapi.co/json/');geo=await r.json();}catch(e){}var did=getDeviceId(),vc=getVC();var v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',cc:geo.country_code||'XX',isp:geo.org||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct',did:did,vc:vc,returning:vc>1};var cur=await getBin(cfg.analyticsId);var vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;await putBin(cfg.analyticsId,{visits:vs});}catch(e){}}
+// ── DASHBOARD ─────────────────────────────────────────────────────────────
 async function loadDash(){var cfg=getLCFG();if(!cfg.analyticsId)return;try{var data=await getBin(cfg.analyticsId);var vs=data.visits||[];var today=new Date().toDateString(),week=Date.now()-7*24*60*60*1000;var td=vs.filter(function(v){return new Date(v.t).toDateString()===today;}).length;var wk=vs.filter(function(v){return new Date(v.t)>=week;}).length;var ct=Array.from(new Set(vs.map(function(v){return v.country;}).filter(function(c){return c!=='Unknown';}))).length;var ud=Array.from(new Set(vs.map(function(v){return v.did;}).filter(Boolean))).length;var rv=vs.filter(function(v){return v.returning;}).length;[['st',vs.length],['sd',td],['sw',wk],['sc2',ct],['sdev',ud],['srv',rv]].forEach(function(x){var el=document.getElementById(x[0]);if(el)countUp(el,x[1]);});var log=document.getElementById('vlog');if(!vs.length){log.innerHTML='<div style="text-align:center;padding:1.5rem;color:rgba(255,255,255,.16);font-size:.76rem">No visits yet.</div>';}else log.innerHTML=vs.slice(0,50).map(function(v){var ret=v.returning?'<span class="badge" style="margin-left:3px">Return</span>':'<span class="badge" style="margin-left:3px;opacity:.45">New</span>';return '<div class="vrow"><div><div class="vm">'+flag(v.cc)+' '+v.city+', '+v.country+ret+'</div><div class="vd">'+v.device+' &middot; '+v.browser+' &middot; '+v.os+'</div><div class="vd">Visit #'+v.vc+' &middot; ID: '+(v.did||'?')+'</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:.6rem;color:rgba(255,255,255,.17)">'+fd(v.t)+'</div></div></div>';}).join('');var cc={};vs.forEach(function(v){cc[v.country]=(cc[v.country]||0)+1;});var scc=Object.entries(cc).sort(function(a,b){return b[1]-a[1];}).slice(0,5);s('vcountries',scc.length?scc.map(function(x){return '<div class="vrow"><span style="font-size:.76rem;color:rgba(255,255,255,.6)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join(''):'<div style="color:rgba(255,255,255,.15);padding:.65rem;font-size:.76rem">-</div>');var dc={};vs.forEach(function(v){dc[v.device]=(dc[v.device]||0)+1;});s('vdevices',Object.entries(dc).map(function(x){return '<div class="vrow"><span style="font-size:.76rem;color:rgba(255,255,255,.6)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join('')||'<div style="color:rgba(255,255,255,.15);padding:.65rem;font-size:.76rem">-</div>');}catch(e){}}
 async function clearLogs(){if(!confirm('Delete all visitor logs?'))return;var cfg=getLCFG();await putBin(cfg.analyticsId,{visits:[]});loadDash();}
+// ── UTILS ─────────────────────────────────────────────────────────────────
 function showAl(el,msg,type){el.textContent=msg;el.className='al '+type;if(type!=='inf')setTimeout(function(){el.className='al';el.textContent='';},5500);}
 function cpLink(id){var txt=document.getElementById(id).textContent;if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){alert('Copied!');});}else{try{var r=document.createRange();r.selectNode(document.getElementById(id));window.getSelection().removeAllRanges();window.getSelection().addRange(r);document.execCommand('copy');alert('Copied!');}catch(e){}}}
 function g(id){var el=document.getElementById(id);return el?el.value.trim():'';}
