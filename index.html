@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!--MASTER_BIN_ID:69dff08d36566621a8b96106-->
+<!--MASTER_BIN_ID:-->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E6B8;--g1:#0B1E12;--g2:#162E1E;--g3:#1F4028;--r:14px;--rs:10px;--sb:env(safe-area-inset-bottom,0px)}
@@ -72,9 +72,10 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .ntab.active svg{filter:drop-shadow(0 0 4px rgba(201,168,76,.4))}
 .pw{overflow:hidden}
 .pi{display:flex;transition:transform .36s cubic-bezier(.4,0,.2,1);will-change:transform;align-items:flex-start}
-.page{flex:0 0 100vw;width:100vw;padding:1.2rem .85rem 3.5rem}
+.page{flex:0 0 100vw;width:100vw;padding:1.2rem .85rem 1rem}
 .pg{max-width:620px;margin:0 auto}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+@keyframes fadeout{from{opacity:1;max-height:60px;margin-bottom:.7rem}to{opacity:0;max-height:0;margin-bottom:0;padding:0;border:none;overflow:hidden}}
 .reveal.in{opacity:1;transform:translateY(0)}
 .verse{background:linear-gradient(145deg,var(--g2),var(--g3));border:1px solid rgba(201,168,76,.12);border-radius:var(--r);padding:1.4rem 1.1rem;text-align:center;margin-bottom:.9rem}
 .var{font-family:"Amiri",serif;font-size:clamp(1rem,4vw,1.5rem);color:var(--gold2);line-height:2;margin-bottom:.7rem;direction:rtl}
@@ -234,6 +235,12 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
   </nav>
   <div class="pw" id="pw"><div class="pi" id="pi">
     <div class="page" id="p0"><div class="pg">
+      <div id="swipe-hint-bar" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:.55rem .75rem .45rem;margin-bottom:.7rem;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.1);border-radius:10px;animation:fadeout 1s ease 4s forwards">
+        <span style="font-size:.68rem;color:rgba(201,168,76,.55);letter-spacing:1.5px;text-transform:uppercase">Swipe left for photos</span>
+        <span style="display:inline-flex;gap:2px;align-items:center">
+          <svg width="18" height="14" viewBox="0 0 28 20" fill="none"><path d="M18 4c1-1 2.5-1 3.5 0l4 4-4 4c-1 1-2.5 1-3.5 0" stroke="rgba(201,168,76,.6)" stroke-width="1.5" stroke-linecap="round"/><rect x="2" y="7" width="18" height="6" rx="3" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.4)" stroke-width="1"/><circle cx="5" cy="10" r="2" fill="rgba(201,168,76,.5)"/></svg>
+        </span>
+      </div>
       <div class="reveal"><div class="verse"><div class="var">&#x648;&#x64E;&#x645;&#x650;&#x646;&#x652; &#x622;&#x64A;&#x64E;&#x627;&#x062A;&#x650;&#x647;&#x650; &#x623;&#x064E;&#x646;&#x652; &#x062E;&#x064E;&#x644;&#x064E;&#x602;&#x642;&#x064E; &#x644;&#x064E;&#x0643;&#x064F;&#x0645;&#x0020;&#x0645;&#x0650;&#x0646;&#x0652;&#x0020;&#x0623;&#x064E;&#x0646;&#x0641;&#x064F;&#x0633;&#x0650;&#x0643;&#x064F;&#x0645;&#x0020;&#x0623;&#x064E;&#x0632;&#x0652;&#x0648;&#x064E;&#x0627;&#x062C;&#x064B;&#x0627;</div><div class="ven">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy."</div><div class="vrf">&#8212; Surah Ar-Rum 30:21</div></div></div>
       <div class="reveal" style="transition-delay:.06s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="ct">Personal</div></div><div id="bp"><div class="bemp">Loading...</div></div></div></div>
       <div class="reveal" style="transition-delay:.1s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ct">Family</div></div><div id="bf"><div class="bemp">Loading...</div></div></div></div>
@@ -245,11 +252,7 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
     <div class="page" id="p1"><div class="pg">
       <div class="reveal"><div class="card">
         <div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="ct">Photos</div></div>
-        <div class="swipe-anim">
-          <div class="swipe-hand">&#128072;</div>
-          <div class="swipe-arrows"><div class="swa"></div><div class="swa"></div><div class="swa"></div></div>
-          <div class="swipe-text">Swipe photo to browse</div>
-        </div>
+
         <div class="pgrid" id="pgallery"><div class="pemp">No photos added yet.</div></div>
       </div></div>
     </div></div>
@@ -358,8 +361,12 @@ function hideLoader(){var ld=document.getElementById('loader');if(!ld.classList.
 var scrolled=false;
 function autoScroll(){
   if(scrolled)return;scrolled=true;
+  // Scroll to show the nav + page content, not just the nav bar
   var nav=document.getElementById('mainnav');
-  if(nav)setTimeout(function(){nav.scrollIntoView({behavior:'smooth',block:'start'});},400);
+  if(nav){
+    var y=nav.getBoundingClientRect().top+window.scrollY;
+    window.scrollTo({top:y,behavior:'smooth'});
+  }
 }
 // ── PAGE SWIPE (no scroll to top) ──────────────────────────────────────────
 var curPage=0,pageCount=2,isAdmin=false;
@@ -406,49 +413,55 @@ window.addEventListener('load',function(){
     else{animName('');setEmpty();hideLoader();}
     return;
   }
-  var sp=lc.adminPass||'',admin=!!(ek&&sp&&ek===sp);
-  // CACHE FIRST: show data immediately if cached
+  // Show cached data immediately if available
   var cachedBio=getCache('bio_data',86400000);
   var cachedPhotos=getCache('photo_data',86400000);
+  var sp=lc.adminPass||'';
+  // Admin check from local cache
+  var admin=!!(ek&&sp&&ek===sp);
   if(cachedBio){
     renderBioData(cachedBio);
     animName(cachedBio.personal&&cachedBio.personal.name||lc.cachedName||'');
-    hideLoader();
-    if(!admin)autoScroll();
+    if(admin)activateAdmin();
+    // Show loader for 2-3s then auto-scroll to content
+    setTimeout(function(){hideLoader();if(!admin)autoScroll();},2200);
   } else {
     if(lc.cachedName)animName(lc.cachedName);
   }
   if(cachedPhotos)renderPhotosData(cachedPhotos);
-  if(admin)activateAdmin();
-  // Always fetch fresh in background
+  // Always boot to get fresh data + verify admin from master bin if needed
   bootLoad(mid,ek,admin,!!cachedBio,!!cachedPhotos);
 });
 async function bootLoad(mid,ek,admin,hasBio,hasPhotos){
   var cfg=getLCFG();
-  // If no jsonbinKey, fetch master bin first
-  if(!cfg.jsonbinKey){
+  // Always fetch master bin if no key stored (new device) OR if ?edit= present and admin not confirmed
+  var needMaster=!cfg.jsonbinKey||(!!ek&&!admin);
+  if(needMaster){
     try{
       var res=await fetch('https://api.jsonbin.io/v3/b/'+mid+'/latest');
       var j=await res.json();
       if(!j.record)throw new Error('no record');
-      saveLCFG(j.record);cfg=Object.assign({},getLCFG(),j.record);
-      // Re-check admin after fetching
-      if(!admin){
-        var ek2=getEditKey();
-        admin=!!(ek2&&cfg.adminPass&&ek2===cfg.adminPass);
-        if(admin)activateAdmin();
+      saveLCFG(j.record);
+      cfg=Object.assign({},getLCFG(),j.record);
+      // Verify admin against real stored password from master bin
+      if(ek&&cfg.adminPass&&ek===cfg.adminPass){
+        admin=true;
+        activateAdmin();
       }
     }catch(e){
-      if(!hasBio){animName('');setEmpty();}
-      hideLoader();return;
+      if(!hasBio){animName('');setEmpty();hideLoader();}
+      return;
     }
   }
-  // Step 1: Fetch bio (fast, text only)
+  // Step 1: Fetch bio
   await loadBioFresh(cfg);
-  if(!hasBio){hideLoader();if(!admin)autoScroll();}
-  // Step 2: Fetch photos in background (after bio done)
+  if(!hasBio){
+    // Landing shows for 2-3s then scroll
+    setTimeout(function(){hideLoader();if(!admin)autoScroll();},2200);
+  }
+  // Step 2: Photos in background
   loadPhotosBackground(cfg);
-  // Step 3: Log visit LAST so it doesn't slow down bio
+  // Step 3: Log visit LAST
   if(!admin)logVisit(cfg);
 }
 async function loadBioFresh(cfg){
@@ -549,7 +562,7 @@ function renderManage(){var el=document.getElementById('pmanage');if(!el)return;
 async function uploadPhoto(inp){if(!inp.files[0])return;var al=document.getElementById('pal'),pr=document.getElementById('uprog'),cfg=getLCFG();if(!cfg.imgbbKey){showAl(al,'ImgBB key missing.','err');return;}pr.style.display='block';var form=new FormData();form.append('image',inp.files[0]);form.append('key',cfg.imgbbKey);try{var r=await fetch('https://api.imgbb.com/1/upload',{method:'POST',body:form});var j=await r.json();if(!j.success)throw new Error(j.error&&j.error.message||'Upload failed');if(!photos.photos)photos.photos=[];photos.photos.push({url:j.data.url,thumb:j.data.thumb&&j.data.thumb.url||j.data.url,name:inp.files[0].name,date:new Date().toISOString()});window._photos=photos.photos;await putBin(cfg.photosId,photos);try{localStorage.removeItem('photo_data');}catch(e){}saveCache('photo_data',photos);showAl(al,'Photo uploaded!','ok');renderGallery();renderManage();}catch(e){showAl(al,'Error: '+e.message,'err');}finally{pr.style.display='none';inp.value='';}}
 async function delPhoto(i){if(!confirm('Remove this photo?'))return;var cfg=getLCFG();photos.photos.splice(i,1);window._photos=photos.photos;await putBin(cfg.photosId,photos);try{localStorage.removeItem('photo_data');}catch(e){}saveCache('photo_data',photos);renderGallery();renderManage();}
 // ── LOG VISIT ─────────────────────────────────────────────────────────────
-async function logVisit(cfg){if(!cfg||!cfg.analyticsId)return;try{var geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:''};try{var r=await fetch('https://ipapi.co/json/');geo=await r.json();}catch(e){}var did=getDeviceId(),vc=getVC();var v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',cc:geo.country_code||'XX',isp:geo.org||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct',did:did,vc:vc,returning:vc>1};var cur=await getBin(cfg.analyticsId);var vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;await putBin(cfg.analyticsId,{visits:vs});}catch(e){}}
+async function logVisit(cfg){if(!cfg||!cfg.analyticsId)return;try{var geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:''};try{var gr=await fetch('http://ip-api.com/json/?fields=status,country,countryCode,regionName,city,isp,timezone,lat,lon');var gj=await gr.json();if(gj.status==='success'){geo={country_name:gj.country,city:gj.city,country_code:gj.countryCode,org:gj.isp,region:gj.regionName,timezone:gj.timezone,lat:gj.lat,lon:gj.lon};}}catch(e){}var did=getDeviceId(),vc=getVC();var v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',region:geo.region||'',cc:geo.country_code||'XX',isp:geo.org||'',timezone:geo.timezone||'',lat:geo.lat||'',lon:geo.lon||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct',did:did,vc:vc,returning:vc>1};var cur=await getBin(cfg.analyticsId);var vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;await putBin(cfg.analyticsId,{visits:vs});}catch(e){}}
 // ── DASHBOARD ─────────────────────────────────────────────────────────────
 async function loadDash(){var cfg=getLCFG();if(!cfg.analyticsId)return;try{var data=await getBin(cfg.analyticsId);var vs=data.visits||[];var today=new Date().toDateString(),week=Date.now()-7*24*60*60*1000;var td=vs.filter(function(v){return new Date(v.t).toDateString()===today;}).length;var wk=vs.filter(function(v){return new Date(v.t)>=week;}).length;var ct=Array.from(new Set(vs.map(function(v){return v.country;}).filter(function(c){return c!=='Unknown';}))).length;var ud=Array.from(new Set(vs.map(function(v){return v.did;}).filter(Boolean))).length;var rv=vs.filter(function(v){return v.returning;}).length;[['st',vs.length],['sd',td],['sw',wk],['sc2',ct],['sdev',ud],['srv',rv]].forEach(function(x){var el=document.getElementById(x[0]);if(el)countUp(el,x[1]);});var log=document.getElementById('vlog');if(!vs.length){log.innerHTML='<div style="text-align:center;padding:1.5rem;color:rgba(255,255,255,.16);font-size:.76rem">No visits yet.</div>';}else log.innerHTML=vs.slice(0,50).map(function(v){var ret=v.returning?'<span class="badge" style="margin-left:3px">Return</span>':'<span class="badge" style="margin-left:3px;opacity:.45">New</span>';return '<div class="vrow"><div><div class="vm">'+flag(v.cc)+' '+v.city+', '+v.country+ret+'</div><div class="vd">'+v.device+' &middot; '+v.browser+' &middot; '+v.os+'</div><div class="vd">Visit #'+v.vc+' &middot; ID: '+(v.did||'?')+'</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:.6rem;color:rgba(255,255,255,.17)">'+fd(v.t)+'</div></div></div>';}).join('');var cc={};vs.forEach(function(v){cc[v.country]=(cc[v.country]||0)+1;});var scc=Object.entries(cc).sort(function(a,b){return b[1]-a[1];}).slice(0,5);s('vcountries',scc.length?scc.map(function(x){return '<div class="vrow"><span style="font-size:.76rem;color:rgba(255,255,255,.6)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join(''):'<div style="color:rgba(255,255,255,.15);padding:.65rem;font-size:.76rem">-</div>');var dc={};vs.forEach(function(v){dc[v.device]=(dc[v.device]||0)+1;});s('vdevices',Object.entries(dc).map(function(x){return '<div class="vrow"><span style="font-size:.76rem;color:rgba(255,255,255,.6)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join('')||'<div style="color:rgba(255,255,255,.15);padding:.65rem;font-size:.76rem">-</div>');}catch(e){}}
 async function clearLogs(){if(!confirm('Delete all visitor logs?'))return;var cfg=getLCFG();await putBin(cfg.analyticsId,{visits:[]});loadDash();}
