@@ -9,12 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!--MASTER_BIN_ID:69dff91f856a6821893a8411-->
+<!--MASTER_BIN_ID:-->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E6B8;--g1:#0B1E12;--g2:#162E1E;--g3:#1F4028;--r:14px;--rs:10px;--sb:env(safe-area-inset-bottom,0px)}
 html{-webkit-text-size-adjust:100%}
-body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:100vh;overflow-x:hidden;overscroll-behavior:none}
+body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;overflow-x:hidden;overscroll-behavior:none}
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 #loader{position:fixed;inset:0;background:var(--g1);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s,visibility .5s}
 #loader.out{opacity:0;visibility:hidden;pointer-events:none}
@@ -70,9 +70,9 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .ntab:active{opacity:.55}
 /* active tab glow indicator */
 .ntab.active svg{filter:drop-shadow(0 0 4px rgba(201,168,76,.4))}
-.pw{overflow:hidden}
-.pi{display:flex;transition:transform .36s cubic-bezier(.4,0,.2,1);will-change:transform;align-items:flex-start}
-.page{flex:0 0 100vw;width:100vw;padding:1.2rem .85rem .5rem}
+.pw{overflow:hidden;height:auto;position:relative}
+.pi{display:flex;transition:transform .36s cubic-bezier(.4,0,.2,1);will-change:transform;align-items:flex-start;height:auto}
+.page{flex:0 0 100vw;width:100vw;min-width:0;padding:1.2rem .85rem .5rem}
 .pg{max-width:620px;margin:0 auto;padding-bottom:.25rem}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
 @keyframes fadeout{from{opacity:1;max-height:60px;margin-bottom:.7rem}to{opacity:0;max-height:0;margin-bottom:0;padding:0;border:none;overflow:hidden}}
@@ -93,6 +93,14 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .bval{font-size:.84rem;color:rgba(255,255,255,.76);line-height:1.5;flex:1}
 .bdsc{margin-top:.55rem;padding:.7rem .85rem;background:rgba(201,168,76,.03);border-left:2px solid rgba(201,168,76,.18);border-radius:0 7px 7px 0;font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.75;font-style:italic}
 .bemp{color:rgba(255,255,255,.16);font-size:.8rem;text-align:center;padding:.5rem}
+.skel{display:flex;flex-direction:column;gap:8px;padding:.2rem 0}
+.skel-row{display:flex;gap:8px;align-items:center}
+.skel-lbl{width:80px;height:10px;border-radius:4px;background:rgba(255,255,255,.06);animation:shimmer 1.4s ease-in-out infinite}
+.skel-val{flex:1;height:10px;border-radius:4px;background:rgba(255,255,255,.05);animation:shimmer 1.4s ease-in-out .2s infinite}
+.skel-val.w60{flex:none;width:60%}
+.skel-val.w80{flex:none;width:80%}
+.skel-val.w40{flex:none;width:40%}
+@keyframes shimmer{0%,100%{opacity:.4}50%{opacity:.9}}
 /* photos swipe hint */
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:.5rem}
 @media(min-width:380px){.pgrid{grid-template-columns:repeat(3,1fr)}}
@@ -242,10 +250,26 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
         </span>
       </div>
       <div class="reveal"><div class="verse"><div class="var">&#x648;&#x64E;&#x645;&#x650;&#x646;&#x652; &#x622;&#x64A;&#x64E;&#x627;&#x062A;&#x650;&#x647;&#x650; &#x623;&#x064E;&#x646;&#x652; &#x062E;&#x064E;&#x644;&#x064E;&#x602;&#x642;&#x064E; &#x644;&#x064E;&#x0643;&#x064F;&#x0645;&#x0020;&#x0645;&#x0650;&#x0646;&#x0652;&#x0020;&#x0623;&#x064E;&#x0646;&#x0641;&#x064F;&#x0633;&#x0650;&#x0643;&#x064F;&#x0645;&#x0020;&#x0623;&#x064E;&#x0632;&#x0652;&#x0648;&#x064E;&#x0627;&#x062C;&#x064B;&#x0627;</div><div class="ven">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy."</div><div class="vrf">&#8212; Surah Ar-Rum 30:21</div></div></div>
-      <div class="reveal" style="transition-delay:.06s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="ct">Personal</div></div><div id="bp"><div class="bemp">Loading...</div></div></div></div>
-      <div class="reveal" style="transition-delay:.1s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ct">Family</div></div><div id="bf"><div class="bemp">Loading...</div></div></div></div>
-      <div class="reveal" style="transition-delay:.14s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg></div><div class="ct">Education &amp; Career</div></div><div id="be"><div class="bemp">Loading...</div></div></div></div>
-      <div class="reveal" style="transition-delay:.18s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 7.81 2 2 0 0 1 5.07 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 11.09A16 16 0 0 0 15.91 17.09l.46-.46a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="ct">Contact</div></div><div id="bc"><div class="bemp">Loading...</div></div></div></div>
+      <div class="reveal" style="transition-delay:.06s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="ct">Personal</div></div><div id="bp"><div class="skel">
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w80"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w40"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w60"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w80"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w60"></div></div>
+</div></div></div></div>
+      <div class="reveal" style="transition-delay:.1s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ct">Family</div></div><div id="bf"><div class="skel">
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w80"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w80"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w40"></div></div>
+</div></div></div></div>
+      <div class="reveal" style="transition-delay:.14s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg></div><div class="ct">Education &amp; Career</div></div><div id="be"><div class="skel">
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w60"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w80"></div></div>
+</div></div></div></div>
+      <div class="reveal" style="transition-delay:.18s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 7.81 2 2 0 0 1 5.07 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 11.09A16 16 0 0 0 15.91 17.09l.46-.46a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="ct">Contact</div></div><div id="bc"><div class="skel">
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w80"></div></div>
+  <div class="skel-row"><div class="skel-lbl"></div><div class="skel-val w60"></div></div>
+</div></div></div></div>
       <div class="orn">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
       <p style="text-align:center;font-size:.64rem;color:rgba(255,255,255,.14);padding-bottom:0;letter-spacing:1px;margin-bottom:.25rem">May Allah bless this union with love, peace and barakah</p>
     </div></div>
@@ -293,8 +317,8 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
         <div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="ct">Manage Photos</div></div>
         <p style="font-size:.7rem;color:rgba(255,255,255,.26);margin-bottom:.75rem">Uploaded to ImgBB (free, permanent). Max 10 photos.</p>
         <div id="pal" class="al"></div>
-        <div class="upzone" onclick="document.getElementById('pfi').click()"><p><strong>Tap to select a photo</strong></p><p style="margin-top:3px">JPG or PNG &middot; up to 8MB</p></div>
-        <input type="file" id="pfi" accept="image/*" style="display:none" onchange="uploadPhoto(this)">
+        <div class="upzone" onclick="document.getElementById('pfi').click()"><p><strong>Tap to select photos</strong></p><p style="margin-top:3px">JPG or PNG &middot; select multiple at once</p></div>
+        <input type="file" id="pfi" accept="image/*" multiple style="display:none" onchange="uploadPhoto(this)">
         <div id="uprog" style="display:none;text-align:center;padding:.7rem;color:rgba(255,255,255,.3);font-size:.78rem">Uploading...</div>
         <div id="pmanage"></div>
       </div>
@@ -356,7 +380,7 @@ function countUp(el,n){var t=performance.now();(function f(now){var p=Math.min((
 function saveCache(key,data){try{localStorage.setItem(key,JSON.stringify({v:data,t:Date.now()}));}catch(e){}}
 function getCache(key,maxAge){try{var c=JSON.parse(localStorage.getItem(key)||'null');if(!c)return null;if(maxAge&&Date.now()-c.t>maxAge)return null;return c.v;}catch(e){return null;}}
 // ── LOADER ─────────────────────────────────────────────────────────────────
-function hideLoader(){var ld=document.getElementById('loader');if(!ld.classList.contains('out')){ld.classList.add('out');document.getElementById('app').classList.add('show');initReveal();}}
+function hideLoader(){var ld=document.getElementById('loader');if(!ld.classList.contains('out')){ld.classList.add('out');document.getElementById('app').classList.add('show');initReveal();setTimeout(function(){updatePageHeight(curPage);},100);}}
 // Auto-scroll to nav (past hero) once data is shown
 var scrolled=false;
 function autoScroll(){
@@ -372,6 +396,18 @@ function autoScroll(){
 var curPage=0,pageCount=2,isAdmin=false;
 var pi=document.getElementById('pi');
 var sx=0,sy2=0,dx=0,movd=false,horiz=false;
+function updatePageHeight(idx){
+  // Set pages-wrap height to match the current active page content
+  var pg=document.getElementById('p'+idx);
+  if(pg){
+    var pw=document.getElementById('pw');
+    // Use auto first to get natural height
+    pw.style.height='auto';
+    var h=pg.scrollHeight;
+    pw.style.height=h+'px';
+  }
+}
+
 function go(idx,ns){
   curPage=idx;pi.style.transform='translateX(-'+(idx*100)+'vw)';
   document.querySelectorAll('.ntab').forEach(function(t,i){t.classList.toggle('active',i===idx);});
@@ -380,7 +416,11 @@ function go(idx,ns){
     var r=nav.getBoundingClientRect();
     if(r.top<0||r.top>window.innerHeight*1.5)nav.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
-  setTimeout(initReveal,55);if(idx===3)loadDash();
+  setTimeout(function(){
+    initReveal();
+    updatePageHeight(idx);
+  },55);
+  if(idx===3)loadDash();
 }
 var pw=document.getElementById('pw');
 pw.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy2=e.touches[0].clientY;movd=false;horiz=false;dx=0;},{passive:true});
@@ -499,14 +539,36 @@ async function loadPhotosBackground(cfg){
 }
 function setEmpty(){['bp','bf','be','bc'].forEach(function(id){s(id,'<div class="bemp">No information yet.</div>');});}
 // ── RENDER FUNCTIONS (separated from fetch) ───────────────────────────────
+function cardFadeIn(id,html,delay){
+  setTimeout(function(){
+    var el=document.getElementById(id);
+    if(!el)return;
+    el.style.opacity='0';
+    el.innerHTML=html;
+    el.style.transition='opacity .35s ease';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){el.style.opacity='1';});
+    });
+  },delay);
+}
+
 function renderBioData(d){
   if(!d)return;
   var p=d.personal||{},f=d.family||{},e=d.education||{},ct=d.contact||{};
-  s('bp',(row('Full Name',p.name)+row('Age',p.age)+row('Date of Birth',p.dob)+row('Birth Place',p.bp)+row('Current City',p.loc)+row('Marital Status',p.ms)+row('Height',p.ht)+row('Languages',p.lg)+dsc(p.ab))||emp());
+
+  // Render each card with a small stagger — feels fast, progressive
+  cardFadeIn('bp',(row('Full Name',p.name)+row('Age',p.age)+row('Date of Birth',p.dob)+row('Birth Place',p.bp)+row('Current City',p.loc)+row('Marital Status',p.ms)+row('Height',p.ht)+row('Languages',p.lg)+dsc(p.ab))||emp(),0);
+
   var sh='';if(f.sibs&&f.sibs.length){sh=f.sibs.map(function(sb,i){return row('Sibling '+(i+1),(sb.rel||'')+(sb.age?' ('+sb.age+' yrs)':''));}).join('');}
-  s('bf',(row('Father',f.fan+(f.fao?' &mdash; '+f.fao:''))+row('Mother',f.mon+(f.moo?' &mdash; '+f.moo:''))+sh)||emp());
-  s('be',(row('Qualification',e.ed)+row('Field',e.fd)+row('Occupation',e.jb))||emp());
-  s('bc',(row('Contact',ct.cn+(ct.cr?' ('+ct.cr+')':''))+row('WhatsApp',ct.ph)+row('Email',ct.em))||emp());
+  cardFadeIn('bf',(row('Father',f.fan+(f.fao?' &mdash; '+f.fao:''))+row('Mother',f.mon+(f.moo?' &mdash; '+f.moo:''))+sh)||emp(),80);
+
+  cardFadeIn('be',(row('Qualification',e.ed)+row('Field',e.fd)+row('Occupation',e.jb))||emp(),160);
+
+  cardFadeIn('bc',(row('Contact',ct.cn+(ct.cr?' ('+ct.cr+')':''))+row('WhatsApp',ct.ph)+row('Email',ct.em))||emp(),240);
+  // Update page height after all cards rendered
+  setTimeout(function(){updatePageHeight(curPage);},320);
+
+  // Fill form fields
   sv('fn',p.name);sv('fa',p.age);sv('fdob',p.dob);sv('fbp',p.bp);sv('floc',p.loc);sv('fms',p.ms);sv('fht',p.ht);sv('flg',p.lg);sv('fab',p.ab);
   sv('ffan',f.fan);sv('ffao',f.fao);sv('fmon',f.mon);sv('fmoo',f.moo);if(f.sibs)setSibs(f.sibs);
   sv('fed',e.ed);sv('ffd2',e.fd);sv('fjb',e.jb);sv('fcn',ct.cn);sv('fcr',ct.cr);sv('fph',ct.ph);sv('fem',ct.em);
@@ -517,6 +579,8 @@ function renderPhotosData(d){
   renderGallery();
   // Preload images into browser cache
   if(photos.photos){photos.photos.forEach(function(p){if(p.url){var img=new Image();img.src=p.url;}});}
+  // Update height if on photos page
+  setTimeout(function(){if(curPage===1)updatePageHeight(1);},100);
 }
 // ── SETUP ─────────────────────────────────────────────────────────────────
 async function doSetup(){
@@ -576,7 +640,37 @@ var photos={photos:[]};window._photos=[];
 async function loadPhotos(){var cfg=getLCFG();if(!cfg.photosId)return;try{var d=await getBin(cfg.photosId);if(d){saveCache('photo_data',d);renderPhotosData(d);renderManage();}}catch(e){}}
 function renderGallery(){var el=document.getElementById('pgallery');var arr=photos&&photos.photos||[];if(!arr.length){el.innerHTML='<div class="pemp">No photos added yet.</div>';return;}el.innerHTML=arr.map(function(p,i){return '<div class="pitem" onclick="openLB('+i+')"><img src="'+p.url+'" loading="lazy" alt="Photo '+(i+1)+'"></div>';}).join('');}
 function renderManage(){var el=document.getElementById('pmanage');if(!el)return;var arr=photos&&photos.photos||[];if(!arr.length){el.innerHTML='<p style="font-size:.73rem;color:rgba(255,255,255,.19)">No photos yet.</p>';return;}el.innerHTML=arr.map(function(p,i){return '<div class="pm-item"><img src="'+(p.thumb||p.url)+'" alt=""><div class="info">'+(p.name||'Photo '+(i+1))+'</div><button class="btn btn-danger btn-sm" onclick="delPhoto('+i+')">Remove</button></div>';}).join('');}
-async function uploadPhoto(inp){if(!inp.files[0])return;var al=document.getElementById('pal'),pr=document.getElementById('uprog'),cfg=getLCFG();if(!cfg.imgbbKey){showAl(al,'ImgBB key missing.','err');return;}pr.style.display='block';var form=new FormData();form.append('image',inp.files[0]);form.append('key',cfg.imgbbKey);try{var r=await fetch('https://api.imgbb.com/1/upload',{method:'POST',body:form});var j=await r.json();if(!j.success)throw new Error(j.error&&j.error.message||'Upload failed');if(!photos.photos)photos.photos=[];photos.photos.push({url:j.data.url,thumb:j.data.thumb&&j.data.thumb.url||j.data.url,name:inp.files[0].name,date:new Date().toISOString()});window._photos=photos.photos;await putBin(cfg.photosId,photos);try{localStorage.removeItem('photo_data');}catch(e){}saveCache('photo_data',photos);showAl(al,'Photo uploaded!','ok');renderGallery();renderManage();}catch(e){showAl(al,'Error: '+e.message,'err');}finally{pr.style.display='none';inp.value='';}}
+async function uploadPhoto(inp){
+  if(!inp.files||!inp.files.length)return;
+  var al=document.getElementById('pal'),pr=document.getElementById('uprog'),cfg=getLCFG();
+  if(!cfg.imgbbKey){showAl(al,'ImgBB key missing.','err');return;}
+  var files=Array.from(inp.files);
+  var total=files.length,done=0,failed=0;
+  pr.style.display='block';
+  pr.textContent='Uploading 1 of '+total+'...';
+  if(!photos.photos)photos.photos=[];
+  for(var i=0;i<files.length;i++){
+    var file=files[i];
+    pr.textContent='Uploading '+(i+1)+' of '+total+'...';
+    try{
+      var form=new FormData();form.append('image',file);form.append('key',cfg.imgbbKey);
+      var r=await fetch('https://api.imgbb.com/1/upload',{method:'POST',body:form});
+      var j=await r.json();
+      if(!j.success)throw new Error(j.error&&j.error.message||'Upload failed');
+      photos.photos.push({url:j.data.url,thumb:j.data.thumb&&j.data.thumb.url||j.data.url,name:file.name,date:new Date().toISOString()});
+      done++;
+    }catch(e){failed++;console.log('Upload failed:',file.name,e.message);}
+  }
+  // Save once after all uploads
+  window._photos=photos.photos;
+  await putBin(cfg.photosId,photos);
+  try{localStorage.removeItem('photo_data');}catch(e){}
+  saveCache('photo_data',photos);
+  if(failed===0){showAl(al,done+' photo'+(done>1?'s':'')+' uploaded! Alhamdulillah.','ok');}
+  else{showAl(al,done+' uploaded, '+failed+' failed. Try again for failed ones.','err');}
+  pr.style.display='none';inp.value='';
+  renderGallery();renderManage();
+}
 async function delPhoto(i){if(!confirm('Remove this photo?'))return;var cfg=getLCFG();photos.photos.splice(i,1);window._photos=photos.photos;await putBin(cfg.photosId,photos);try{localStorage.removeItem('photo_data');}catch(e){}saveCache('photo_data',photos);renderGallery();renderManage();}
 // ── LOG VISIT ─────────────────────────────────────────────────────────────
 async function logVisit(cfg){if(!cfg||!cfg.analyticsId)return;try{var geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:''};try{var gr=await fetch('http://ip-api.com/json/?fields=status,country,countryCode,regionName,city,isp,timezone,lat,lon');var gj=await gr.json();if(gj.status==='success'){geo={country_name:gj.country,city:gj.city,country_code:gj.countryCode,org:gj.isp,region:gj.regionName,timezone:gj.timezone,lat:gj.lat,lon:gj.lon};}}catch(e){}var did=getDeviceId(),vc=getVC();var v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',region:geo.region||'',cc:geo.country_code||'XX',isp:geo.org||'',timezone:geo.timezone||'',lat:geo.lat||'',lon:geo.lon||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct',did:did,vc:vc,returning:vc>1};var cur=await getBin(cfg.analyticsId);var vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;await putBin(cfg.analyticsId,{visits:vs});}catch(e){}}
