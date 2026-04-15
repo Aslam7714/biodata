@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!--MASTER_BIN_ID:69dff3ec36566621a8b96e43-->
+<!--MASTER_BIN_ID:-->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E6B8;--g1:#0B1E12;--g2:#162E1E;--g3:#1F4028;--r:14px;--rs:10px;--sb:env(safe-area-inset-bottom,0px)}
@@ -72,8 +72,8 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .ntab.active svg{filter:drop-shadow(0 0 4px rgba(201,168,76,.4))}
 .pw{overflow:hidden}
 .pi{display:flex;transition:transform .36s cubic-bezier(.4,0,.2,1);will-change:transform;align-items:flex-start}
-.page{flex:0 0 100vw;width:100vw;padding:1.2rem .85rem 1rem}
-.pg{max-width:620px;margin:0 auto}
+.page{flex:0 0 100vw;width:100vw;padding:1.2rem .85rem .5rem}
+.pg{max-width:620px;margin:0 auto;padding-bottom:.25rem}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
 @keyframes fadeout{from{opacity:1;max-height:60px;margin-bottom:.7rem}to{opacity:0;max-height:0;margin-bottom:0;padding:0;border:none;overflow:hidden}}
 .reveal.in{opacity:1;transform:translateY(0)}
@@ -81,7 +81,7 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .var{font-family:"Amiri",serif;font-size:clamp(1rem,4vw,1.5rem);color:var(--gold2);line-height:2;margin-bottom:.7rem;direction:rtl}
 .ven{font-size:.75rem;color:rgba(255,255,255,.45);font-style:italic;line-height:1.7}
 .vrf{font-size:.63rem;color:var(--gold);margin-top:.4rem;letter-spacing:1.5px;text-transform:uppercase}
-.card{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.08);border-radius:var(--r);padding:1.05rem;margin-bottom:.85rem}
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.08);border-radius:var(--r);padding:1.05rem;margin-bottom:.6rem}
 .chd{display:flex;align-items:center;gap:9px;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(201,168,76,.07)}
 .cic{width:28px;height:28px;border-radius:8px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cic svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -165,7 +165,7 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
 .pm-item{display:flex;align-items:center;gap:8px;padding:.48rem;background:rgba(255,255,255,.022);border-radius:7px;margin-bottom:6px;border:1px solid rgba(255,255,255,.038)}
 .pm-item img{width:38px;height:38px;object-fit:cover;border-radius:5px}
 .pm-item .info{flex:1;font-size:.73rem;color:rgba(255,255,255,.38);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.orn{text-align:center;color:var(--gold);font-size:.75rem;letter-spacing:7px;opacity:.28;padding:.65rem 0}
+.orn{text-align:center;color:var(--gold);font-size:.75rem;letter-spacing:7px;opacity:.28;padding:.35rem 0}
 #setup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:8000;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .sb{background:var(--g2);border:1px solid rgba(201,168,76,.13);border-radius:var(--r);padding:1.6rem 1.1rem;max-width:430px;width:calc(100% - 1.6rem);margin:1.6rem auto 5rem}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.16);border-radius:2px}
@@ -235,7 +235,7 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
   </nav>
   <div class="pw" id="pw"><div class="pi" id="pi">
     <div class="page" id="p0"><div class="pg">
-      <div id="swipe-hint-bar" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:.55rem .75rem .45rem;margin-bottom:.7rem;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.1);border-radius:10px;animation:fadeout 1s ease 4s forwards">
+      <div id="swipe-hint-bar" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:.55rem .75rem .45rem;margin-bottom:.7rem;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.1);border-radius:10px;animation:fadeout 1s ease 8s forwards">
         <span style="font-size:.68rem;color:rgba(201,168,76,.55);letter-spacing:1.5px;text-transform:uppercase">Swipe left for photos</span>
         <span style="display:inline-flex;gap:2px;align-items:center">
           <svg width="18" height="14" viewBox="0 0 28 20" fill="none"><path d="M18 4c1-1 2.5-1 3.5 0l4 4-4 4c-1 1-2.5 1-3.5 0" stroke="rgba(201,168,76,.6)" stroke-width="1.5" stroke-linecap="round"/><rect x="2" y="7" width="18" height="6" rx="3" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.4)" stroke-width="1"/><circle cx="5" cy="10" r="2" fill="rgba(201,168,76,.5)"/></svg>
@@ -247,9 +247,9 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;min-height:
       <div class="reveal" style="transition-delay:.14s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg></div><div class="ct">Education &amp; Career</div></div><div id="be"><div class="bemp">Loading...</div></div></div></div>
       <div class="reveal" style="transition-delay:.18s"><div class="card"><div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 7.81 2 2 0 0 1 5.07 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 11.09A16 16 0 0 0 15.91 17.09l.46-.46a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="ct">Contact</div></div><div id="bc"><div class="bemp">Loading...</div></div></div></div>
       <div class="orn">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
-      <p style="text-align:center;font-size:.64rem;color:rgba(255,255,255,.14);padding-bottom:.5rem;letter-spacing:1px">May Allah bless this union with love, peace and barakah</p>
+      <p style="text-align:center;font-size:.64rem;color:rgba(255,255,255,.14);padding-bottom:0;letter-spacing:1px;margin-bottom:.25rem">May Allah bless this union with love, peace and barakah</p>
     </div></div>
-    <div class="page" id="p1"><div class="pg">
+    <div class="page" id="p1" style="padding-bottom:.25rem"><div class="pg">
       <div class="reveal"><div class="card">
         <div class="chd"><div class="cic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="ct">Photos</div></div>
 
@@ -408,29 +408,46 @@ function getEditKey(){var s=location.search||(location.href.indexOf('?')>-1?'?'+
 // ── BOOT — CACHE FIRST ────────────────────────────────────────────────────
 window.addEventListener('load',function(){
   var mid=getMID(),ek=getEditKey(),lc=getLCFG();
+
   if(!mid){
     if(ek){document.getElementById('setup').style.display='block';hideLoader();}
     else{animName('');setEmpty();hideLoader();}
     return;
   }
-  // Show cached data immediately if available
+
   var cachedBio=getCache('bio_data',86400000);
   var cachedPhotos=getCache('photo_data',86400000);
   var sp=lc.adminPass||'';
-  // Admin check from local cache
   var admin=!!(ek&&sp&&ek===sp);
-  if(cachedBio){
-    renderBioData(cachedBio);
-    animName(cachedBio.personal&&cachedBio.personal.name||lc.cachedName||'');
-    if(admin)activateAdmin();
-    // Show loader for 2-3s then auto-scroll to content
-    setTimeout(function(){hideLoader();if(!admin)autoScroll();},2200);
-  } else {
-    if(lc.cachedName)animName(lc.cachedName);
-  }
+
+  // START FETCHING DATA IMMEDIATELY IN BACKGROUND
+  var bootPromise=bootLoad(mid,ek,admin,!!cachedBio,!!cachedPhotos);
+
+  // Show cached photos immediately
   if(cachedPhotos)renderPhotosData(cachedPhotos);
-  // Always boot to get fresh data + verify admin from master bin if needed
-  bootLoad(mid,ek,admin,!!cachedBio,!!cachedPhotos);
+
+  if(cachedBio){
+    // CACHED: Show landing page after 600ms (short loader), render data, then scroll
+    var name=cachedBio.personal&&cachedBio.personal.name||lc.cachedName||'';
+    setTimeout(function(){
+      hideLoader();
+      animName(name);
+      if(admin)activateAdmin();
+    },600);
+    // Auto scroll to biodata after name animation finishes (~2.5s total)
+    setTimeout(function(){if(!admin)autoScroll();},2800);
+  } else {
+    // NO CACHE: Show landing page after 700ms, data loads in background
+    // Use cached name if available for instant display
+    var cachedName=lc.cachedName||'';
+    setTimeout(function(){
+      hideLoader();
+      animName(cachedName);
+      if(admin)activateAdmin();
+    },700);
+    // When boot finishes, data will be rendered, then scroll
+    // bootLoad calls autoScroll when ready
+  }
 });
 async function bootLoad(mid,ek,admin,hasBio,hasPhotos){
   var cfg=getLCFG();
@@ -453,15 +470,15 @@ async function bootLoad(mid,ek,admin,hasBio,hasPhotos){
       return;
     }
   }
-  // Step 1: Fetch bio
+  // Step 1: Fetch bio — runs in background while user sees landing
   await loadBioFresh(cfg);
   if(!hasBio){
-    // Landing shows for 2-3s then scroll
-    setTimeout(function(){hideLoader();if(!admin)autoScroll();},2200);
+    // Data just arrived, scroll to it (loader already hidden by timer)
+    setTimeout(function(){if(!admin)autoScroll();},300);
   }
   // Step 2: Photos in background
   loadPhotosBackground(cfg);
-  // Step 3: Log visit LAST
+  // Step 3: Log visit LAST — doesn't block anything
   if(!admin)logVisit(cfg);
 }
 async function loadBioFresh(cfg){
