@@ -9,14 +9,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!--MASTER_BIN_ID:69dffd1e856a6821893a9173-->
+<!--MASTER_BIN_ID:-->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E6B8;--g1:#0B1E12;--g2:#162E1E;--g3:#1F4028;--r:14px;--rs:10px;--sb:env(safe-area-inset-bottom,0px)}
 html{-webkit-text-size-adjust:100%}
 body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;overflow-x:hidden;overscroll-behavior:none}
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
-#loader{position:fixed;inset:0;background:var(--g1);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s,visibility .5s}
+#loader{position:fixed;inset:0;background:var(--g1);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9998;transition:opacity .5s,visibility .5s}
 #loader.out{opacity:0;visibility:hidden;pointer-events:none}
 .ld-outer{position:relative;width:64px;height:64px;margin-bottom:1rem}
 .ld-ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(201,168,76,.1);border-top-color:var(--gold);animation:spin 1.1s linear infinite}
@@ -174,7 +174,7 @@ body{font-family:"Nunito",sans-serif;background:var(--g1);color:#fff;overflow-x:
 .pm-item img{width:38px;height:38px;object-fit:cover;border-radius:5px}
 .pm-item .info{flex:1;font-size:.73rem;color:rgba(255,255,255,.38);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .orn{text-align:center;color:var(--gold);font-size:.75rem;letter-spacing:7px;opacity:.28;padding:.35rem 0}
-#setup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:8000;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#setup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:99999;overflow-y:auto;-webkit-overflow-scrolling:touch;backdrop-filter:blur(6px)}
 .sb{background:var(--g2);border:1px solid rgba(201,168,76,.13);border-radius:var(--r);padding:1.6rem 1.1rem;max-width:430px;width:calc(100% - 1.6rem);margin:1.6rem auto 5rem}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.16);border-radius:2px}
 </style>
@@ -450,8 +450,12 @@ window.addEventListener('load',function(){
   var mid=getMID(),ek=getEditKey(),lc=getLCFG();
 
   if(!mid){
-    if(ek){document.getElementById('setup').style.display='block';hideLoader();}
-    else{animName('');setEmpty();hideLoader();}
+    if(ek){
+      // Hide loader instantly, show setup on top
+      document.getElementById('loader').classList.add('out');
+      document.getElementById('app').classList.add('show');
+      document.getElementById('setup').style.display='block';
+    } else {animName('');setEmpty();hideLoader();}
     return;
   }
 
@@ -607,7 +611,7 @@ async function writeGH(mid,u,r,t){
   var bin=atob(fd.content.replace(/\n/g,'')),bytes=new Uint8Array(bin.length);
   for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
   var html=new TextDecoder('utf-8').decode(bytes);
-  var old='<!--MASTER_BIN_ID:69e27bf3aaba8821970e008a-->';
+  var old='<!--MASTER_BIN_ID:-->';
   if(html.indexOf(old)===-1)throw new Error('Marker not found. Re-download and re-upload the latest index.html.');
   html=html.replace(old,'<!--MASTER_BIN_ID:'+mid+'-->');
   var enc=new TextEncoder().encode(html),bs='';enc.forEach(function(b){bs+=String.fromCharCode(b);});
@@ -673,7 +677,21 @@ async function uploadPhoto(inp){
 }
 async function delPhoto(i){if(!confirm('Remove this photo?'))return;var cfg=getLCFG();photos.photos.splice(i,1);window._photos=photos.photos;await putBin(cfg.photosId,photos);try{localStorage.removeItem('photo_data');}catch(e){}saveCache('photo_data',photos);renderGallery();renderManage();}
 // ── LOG VISIT ─────────────────────────────────────────────────────────────
-async function logVisit(cfg){if(!cfg||!cfg.analyticsId)return;try{var geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:''};try{var gr=await fetch('http://ip-api.com/json/?fields=status,country,countryCode,regionName,city,isp,timezone,lat,lon');var gj=await gr.json();if(gj.status==='success'){geo={country_name:gj.country,city:gj.city,country_code:gj.countryCode,org:gj.isp,region:gj.regionName,timezone:gj.timezone,lat:gj.lat,lon:gj.lon};}}catch(e){}var did=getDeviceId(),vc=getVC();var v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',region:geo.region||'',cc:geo.country_code||'XX',isp:geo.org||'',timezone:geo.timezone||'',lat:geo.lat||'',lon:geo.lon||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct',did:did,vc:vc,returning:vc>1};var cur=await getBin(cfg.analyticsId);var vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;await putBin(cfg.analyticsId,{visits:vs});}catch(e){}}
+async function logVisit(cfg){if(!cfg||!cfg.analyticsId)return;try{var geo={country_name:'Unknown',city:'Unknown',country_code:'XX',org:''};// Try multiple geo APIs with fallback — all HTTPS, all free
+var geoAPIs=[
+  {url:'https://ipwho.is/',parse:function(d){return d.success?{country_name:d.country,city:d.city,country_code:d.country_code,org:(d.connection&&d.connection.isp)||'',region:d.region||'',timezone:(d.timezone&&d.timezone.id)||'',lat:d.latitude||'',lon:d.longitude||''}:null;}},
+  {url:'https://ipapi.co/json/',parse:function(d){return d.city?{country_name:d.country_name,city:d.city,country_code:d.country_code,org:d.org||'',region:d.region||'',timezone:d.timezone||'',lat:d.latitude||'',lon:d.longitude||''}:null;}},
+  {url:'https://freeipapi.com/api/json',parse:function(d){return d.cityName?{country_name:d.countryName,city:d.cityName,country_code:d.countryCode,org:'',region:d.regionName||'',timezone:d.timeZone||'',lat:d.latitude||'',lon:d.longitude||''}:null;}},
+  {url:'https://ipinfo.io/json',parse:function(d){var ll=(d.loc||',').split(',');return d.city?{country_name:d.country,city:d.city,country_code:d.country,org:d.org||'',region:d.region||'',timezone:d.timezone||'',lat:ll[0]||'',lon:ll[1]||''}:null;}}
+];
+for(var gi=0;gi<geoAPIs.length;gi++){
+  try{
+    var gr=await fetch(geoAPIs[gi].url);
+    var gj=await gr.json();
+    var parsed=geoAPIs[gi].parse(gj);
+    if(parsed&&parsed.city&&parsed.city!==''){geo=parsed;break;}
+  }catch(e){continue;}
+}var did=getDeviceId(),vc=getVC();var v={t:new Date().toISOString(),country:geo.country_name||'Unknown',city:geo.city||'Unknown',region:geo.region||'',cc:geo.country_code||'XX',isp:geo.org||'',timezone:geo.timezone||'',lat:geo.lat||'',lon:geo.lon||'',device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop',browser:getBr(),os:getOS(),ref:document.referrer||'Direct',did:did,vc:vc,returning:vc>1};var cur=await getBin(cfg.analyticsId);var vs=cur.visits||[];vs.unshift(v);if(vs.length>500)vs.length=500;await putBin(cfg.analyticsId,{visits:vs});}catch(e){}}
 // ── DASHBOARD ─────────────────────────────────────────────────────────────
 async function loadDash(){var cfg=getLCFG();if(!cfg.analyticsId)return;try{var data=await getBin(cfg.analyticsId);var vs=data.visits||[];var today=new Date().toDateString(),week=Date.now()-7*24*60*60*1000;var td=vs.filter(function(v){return new Date(v.t).toDateString()===today;}).length;var wk=vs.filter(function(v){return new Date(v.t)>=week;}).length;var ct=Array.from(new Set(vs.map(function(v){return v.country;}).filter(function(c){return c!=='Unknown';}))).length;var ud=Array.from(new Set(vs.map(function(v){return v.did;}).filter(Boolean))).length;var rv=vs.filter(function(v){return v.returning;}).length;[['st',vs.length],['sd',td],['sw',wk],['sc2',ct],['sdev',ud],['srv',rv]].forEach(function(x){var el=document.getElementById(x[0]);if(el)countUp(el,x[1]);});var log=document.getElementById('vlog');if(!vs.length){log.innerHTML='<div style="text-align:center;padding:1.5rem;color:rgba(255,255,255,.16);font-size:.76rem">No visits yet.</div>';}else log.innerHTML=vs.slice(0,50).map(function(v){var ret=v.returning?'<span class="badge" style="margin-left:3px">Return</span>':'<span class="badge" style="margin-left:3px;opacity:.45">New</span>';return '<div class="vrow"><div><div class="vm">'+flag(v.cc)+' '+v.city+', '+v.country+ret+'</div><div class="vd">'+v.device+' &middot; '+v.browser+' &middot; '+v.os+'</div><div class="vd">Visit #'+v.vc+' &middot; ID: '+(v.did||'?')+'</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:.6rem;color:rgba(255,255,255,.17)">'+fd(v.t)+'</div></div></div>';}).join('');var cc={};vs.forEach(function(v){cc[v.country]=(cc[v.country]||0)+1;});var scc=Object.entries(cc).sort(function(a,b){return b[1]-a[1];}).slice(0,5);s('vcountries',scc.length?scc.map(function(x){return '<div class="vrow"><span style="font-size:.76rem;color:rgba(255,255,255,.6)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join(''):'<div style="color:rgba(255,255,255,.15);padding:.65rem;font-size:.76rem">-</div>');var dc={};vs.forEach(function(v){dc[v.device]=(dc[v.device]||0)+1;});s('vdevices',Object.entries(dc).map(function(x){return '<div class="vrow"><span style="font-size:.76rem;color:rgba(255,255,255,.6)">'+x[0]+'</span><span class="badge">'+x[1]+'</span></div>';}).join('')||'<div style="color:rgba(255,255,255,.15);padding:.65rem;font-size:.76rem">-</div>');}catch(e){}}
 async function clearLogs(){if(!confirm('Delete all visitor logs?'))return;var cfg=getLCFG();await putBin(cfg.analyticsId,{visits:[]});loadDash();}
